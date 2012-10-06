@@ -7,9 +7,10 @@
 //
 
 #import "ActivityViewController.h"
+#import "ProductDescriptionController.h"
 
 @interface ActivityViewController ()
-
+@property (nonatomic, strong) FoodRate *foodRate;
 @end
 
 @implementation ActivityViewController
@@ -19,6 +20,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.foodRate = [[FoodRate alloc] initWithDelegate:self];
     }
     return self;
 }
@@ -39,6 +41,20 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void) barcodeDetected:(ZBarSymbol *)barcode urlRequest:(NSURLRequest *)urlRequest
+{
+    ProductDescriptionController *productController = [[ProductDescriptionController alloc] initWithRequest:urlRequest];
+    
+    [self.foodRate.zbarController dismissViewControllerAnimated:YES completion:^{
+        [self presentViewController:productController animated:YES completion:nil];
+    }];
+}
+
+- (IBAction)rateFood:(id)sender
+{
+    [self presentViewController:self.foodRate.zbarController animated:YES completion:nil];
 }
 
 @end

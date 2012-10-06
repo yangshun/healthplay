@@ -15,5 +15,6 @@
 @property (nonatomic, weak) IBOutlet UIImageView *productImageView;
 
 - (id) initWithRequest:(NSURLRequest*)request;
+- (IBAction)backButtonPressed:(id)sender;
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FoodRate.h"
 
-@interface ActivityViewController : UIViewController
+@interface ActivityViewController : UIViewController<FoodRateDelegate>
+
+- (IBAction)rateFood:(id)sender;
 
 @end
