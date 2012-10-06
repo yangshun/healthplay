@@ -1,5 +1,5 @@
 //
-//  NavigationViewController.h
+//  LoginViewController.h
 //  HealthPlay
 //
 //  Created by YangShun on 6/10/12.
@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LoginViewController.h"
 
-@interface NavigationViewController : UINavigationController
+@interface LoginViewController : UIViewController
 
 @end
