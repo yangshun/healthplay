@@ -1,0 +1,336 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6DD8EED81620B93E006A1F13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD8EED71620B93E006A1F13 /* UIKit.framework */; };
+		6DD8EEDA1620B93E006A1F13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD8EED91620B93E006A1F13 /* Foundation.framework */; };
+		6DD8EEDC1620B93E006A1F13 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD8EEDB1620B93E006A1F13 /* CoreGraphics.framework */; };
+		6DD8EEE21620B93E006A1F13 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DD8EEE01620B93E006A1F13 /* InfoPlist.strings */; };
+		6DD8EEE41620B93E006A1F13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD8EEE31620B93E006A1F13 /* main.m */; };
+		6DD8EEE81620B93E006A1F13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD8EEE71620B93E006A1F13 /* AppDelegate.m */; };
+		6DD8EEEB1620B93E006A1F13 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD8EEEA1620B93E006A1F13 /* ViewController.m */; };
+		6DD8EEEE1620B93E006A1F13 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DD8EEEC1620B93E006A1F13 /* ViewController.xib */; };
+		6DD8EEFB1620BA64006A1F13 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD8EEF91620BA64006A1F13 /* NavigationViewController.m */; };
+		6DD8EEFC1620BA64006A1F13 /* NavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DD8EEFA1620BA64006A1F13 /* NavigationViewController.xib */; };
+		6DD8EF001620BB0C006A1F13 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD8EEFE1620BB0C006A1F13 /* ProfileViewController.m */; };
+		6DD8EF011620BB0C006A1F13 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DD8EEFF1620BB0C006A1F13 /* ProfileViewController.xib */; };
+		6DD8EF051620BB20006A1F13 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD8EF031620BB20006A1F13 /* ActivityViewController.m */; };
+		6DD8EF061620BB20006A1F13 /* ActivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DD8EF041620BB20006A1F13 /* ActivityViewController.xib */; };
+		6DD8EF0A1620BB32006A1F13 /* PreGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD8EF081620BB32006A1F13 /* PreGameViewController.m */; };
+		6DD8EF0B1620BB32006A1F13 /* PreGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DD8EF091620BB32006A1F13 /* PreGameViewController.xib */; };
+		6DD8EF0F1620BB91006A1F13 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD8EF0D1620BB91006A1F13 /* GameViewController.m */; };
+		6DD8EF101620BB91006A1F13 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DD8EF0E1620BB91006A1F13 /* GameViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6DD8EED31620B93E006A1F13 /* HealthPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DD8EED71620B93E006A1F13 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6DD8EED91620B93E006A1F13 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6DD8EEDB1620B93E006A1F13 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6DD8EEDF1620B93E006A1F13 /* HealthPlay-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HealthPlay-Info.plist"; sourceTree = "<group>"; };
+		6DD8EEE11620B93E006A1F13 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6DD8EEE31620B93E006A1F13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6DD8EEE51620B93E006A1F13 /* HealthPlay-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HealthPlay-Prefix.pch"; sourceTree = "<group>"; };
+		6DD8EEE61620B93E006A1F13 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6DD8EEE71620B93E006A1F13 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6DD8EEE91620B93E006A1F13 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6DD8EEEA1620B93E006A1F13 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6DD8EEED1620B93E006A1F13 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		6DD8EEF81620BA64006A1F13 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		6DD8EEF91620BA64006A1F13 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		6DD8EEFA1620BA64006A1F13 /* NavigationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationViewController.xib; sourceTree = "<group>"; };
+		6DD8EEFD1620BB0C006A1F13 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		6DD8EEFE1620BB0C006A1F13 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		6DD8EEFF1620BB0C006A1F13 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		6DD8EF021620BB20006A1F13 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
+		6DD8EF031620BB20006A1F13 /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
+		6DD8EF041620BB20006A1F13 /* ActivityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityViewController.xib; sourceTree = "<group>"; };
+		6DD8EF071620BB31006A1F13 /* PreGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreGameViewController.h; sourceTree = "<group>"; };
+		6DD8EF081620BB32006A1F13 /* PreGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreGameViewController.m; sourceTree = "<group>"; };
+		6DD8EF091620BB32006A1F13 /* PreGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreGameViewController.xib; sourceTree = "<group>"; };
+		6DD8EF0C1620BB91006A1F13 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		6DD8EF0D1620BB91006A1F13 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		6DD8EF0E1620BB91006A1F13 /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6DD8EED01620B93E006A1F13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DD8EED81620B93E006A1F13 /* UIKit.framework in Frameworks */,
+				6DD8EEDA1620B93E006A1F13 /* Foundation.framework in Frameworks */,
+				6DD8EEDC1620B93E006A1F13 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6DD8EEC81620B93E006A1F13 = {
+			isa = PBXGroup;
+			children = (
+				6DD8EEDD1620B93E006A1F13 /* HealthPlay */,
+				6DD8EED61620B93E006A1F13 /* Frameworks */,
+				6DD8EED41620B93E006A1F13 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6DD8EED41620B93E006A1F13 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6DD8EED31620B93E006A1F13 /* HealthPlay.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6DD8EED61620B93E006A1F13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6DD8EED71620B93E006A1F13 /* UIKit.framework */,
+				6DD8EED91620B93E006A1F13 /* Foundation.framework */,
+				6DD8EEDB1620B93E006A1F13 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6DD8EEDD1620B93E006A1F13 /* HealthPlay */ = {
+			isa = PBXGroup;
+			children = (
+				6DD8EEE61620B93E006A1F13 /* AppDelegate.h */,
+				6DD8EEE71620B93E006A1F13 /* AppDelegate.m */,
+				6DD8EEF81620BA64006A1F13 /* NavigationViewController.h */,
+				6DD8EEF91620BA64006A1F13 /* NavigationViewController.m */,
+				6DD8EEFA1620BA64006A1F13 /* NavigationViewController.xib */,
+				6DD8EEE91620B93E006A1F13 /* ViewController.h */,
+				6DD8EEEA1620B93E006A1F13 /* ViewController.m */,
+				6DD8EEEC1620B93E006A1F13 /* ViewController.xib */,
+				6DD8EEFD1620BB0C006A1F13 /* ProfileViewController.h */,
+				6DD8EEFE1620BB0C006A1F13 /* ProfileViewController.m */,
+				6DD8EEFF1620BB0C006A1F13 /* ProfileViewController.xib */,
+				6DD8EF021620BB20006A1F13 /* ActivityViewController.h */,
+				6DD8EF031620BB20006A1F13 /* ActivityViewController.m */,
+				6DD8EF041620BB20006A1F13 /* ActivityViewController.xib */,
+				6DD8EF071620BB31006A1F13 /* PreGameViewController.h */,
+				6DD8EF081620BB32006A1F13 /* PreGameViewController.m */,
+				6DD8EF091620BB32006A1F13 /* PreGameViewController.xib */,
+				6DD8EF0C1620BB91006A1F13 /* GameViewController.h */,
+				6DD8EF0D1620BB91006A1F13 /* GameViewController.m */,
+				6DD8EF0E1620BB91006A1F13 /* GameViewController.xib */,
+				6DD8EEDE1620B93E006A1F13 /* Supporting Files */,
+			);
+			path = HealthPlay;
+			sourceTree = "<group>";
+		};
+		6DD8EEDE1620B93E006A1F13 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6DD8EEDF1620B93E006A1F13 /* HealthPlay-Info.plist */,
+				6DD8EEE01620B93E006A1F13 /* InfoPlist.strings */,
+				6DD8EEE31620B93E006A1F13 /* main.m */,
+				6DD8EEE51620B93E006A1F13 /* HealthPlay-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6DD8EED21620B93E006A1F13 /* HealthPlay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6DD8EEF11620B93E006A1F13 /* Build configuration list for PBXNativeTarget "HealthPlay" */;
+			buildPhases = (
+				6DD8EECF1620B93E006A1F13 /* Sources */,
+				6DD8EED01620B93E006A1F13 /* Frameworks */,
+				6DD8EED11620B93E006A1F13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HealthPlay;
+			productName = HealthPlay;
+			productReference = 6DD8EED31620B93E006A1F13 /* HealthPlay.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6DD8EECA1620B93E006A1F13 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = YangShun;
+			};
+			buildConfigurationList = 6DD8EECD1620B93E006A1F13 /* Build configuration list for PBXProject "HealthPlay" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6DD8EEC81620B93E006A1F13;
+			productRefGroup = 6DD8EED41620B93E006A1F13 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6DD8EED21620B93E006A1F13 /* HealthPlay */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6DD8EED11620B93E006A1F13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DD8EEE21620B93E006A1F13 /* InfoPlist.strings in Resources */,
+				6DD8EEEE1620B93E006A1F13 /* ViewController.xib in Resources */,
+				6DD8EEFC1620BA64006A1F13 /* NavigationViewController.xib in Resources */,
+				6DD8EF011620BB0C006A1F13 /* ProfileViewController.xib in Resources */,
+				6DD8EF061620BB20006A1F13 /* ActivityViewController.xib in Resources */,
+				6DD8EF0B1620BB32006A1F13 /* PreGameViewController.xib in Resources */,
+				6DD8EF101620BB91006A1F13 /* GameViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6DD8EECF1620B93E006A1F13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DD8EEE41620B93E006A1F13 /* main.m in Sources */,
+				6DD8EEE81620B93E006A1F13 /* AppDelegate.m in Sources */,
+				6DD8EEEB1620B93E006A1F13 /* ViewController.m in Sources */,
+				6DD8EEFB1620BA64006A1F13 /* NavigationViewController.m in Sources */,
+				6DD8EF001620BB0C006A1F13 /* ProfileViewController.m in Sources */,
+				6DD8EF051620BB20006A1F13 /* ActivityViewController.m in Sources */,
+				6DD8EF0A1620BB32006A1F13 /* PreGameViewController.m in Sources */,
+				6DD8EF0F1620BB91006A1F13 /* GameViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6DD8EEE01620B93E006A1F13 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6DD8EEE11620B93E006A1F13 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6DD8EEEC1620B93E006A1F13 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6DD8EEED1620B93E006A1F13 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6DD8EEEF1620B93E006A1F13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6DD8EEF01620B93E006A1F13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6DD8EEF21620B93E006A1F13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HealthPlay/HealthPlay-Prefix.pch";
+				INFOPLIST_FILE = "HealthPlay/HealthPlay-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6DD8EEF31620B93E006A1F13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HealthPlay/HealthPlay-Prefix.pch";
+				INFOPLIST_FILE = "HealthPlay/HealthPlay-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6DD8EECD1620B93E006A1F13 /* Build configuration list for PBXProject "HealthPlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DD8EEEF1620B93E006A1F13 /* Debug */,
+				6DD8EEF01620B93E006A1F13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6DD8EEF11620B93E006A1F13 /* Build configuration list for PBXNativeTarget "HealthPlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DD8EEF21620B93E006A1F13 /* Debug */,
+				6DD8EEF31620B93E006A1F13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6DD8EECA1620B93E006A1F13 /* Project object */;
+}
