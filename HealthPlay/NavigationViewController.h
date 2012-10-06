@@ -11,4 +11,7 @@
 
 @interface NavigationViewController : UINavigationController
 
+@property (strong, nonatomic) NSString *username;
+@property (strong, nonatomic) NSString *userid;
+
 @end

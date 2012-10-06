@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 YangShun. All rights reserved.
 //
 
+#import "NavigationViewController.h"
 #import "LoginViewController.h"
 #import "User.h"
 #import "ViewController.h"
@@ -43,6 +44,9 @@
     NSLog(@"Signup successful.");
     ViewController *vc = [[ViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
+    ((NavigationViewController*)(self.navigationController)).username = userString;
+    ((NavigationViewController*)(self.navigationController)).userid = [newUser getId];
+    NSLog(@"new user id:%@", [newUser getId]);
   } onFailure:^(NSError *respond) {
     NSLog(@"Error sign up %@", respond.description);
   }];
@@ -65,6 +69,9 @@
       
       if ([currentUser.username isEqualToString:userString] &&
           [currentUser.password isEqualToString:passwordString]) {
+        ((NavigationViewController*)(self.navigationController)).username = userString;
+        ((NavigationViewController*)(self.navigationController)).userid = [currentUser getId];
+        NSLog(@"user id: %@", [currentUser getId]);
         ViewController *vc = [[ViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
         userMatched = YES;

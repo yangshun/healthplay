@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "NavigationViewController.h"
 
 @interface ViewController ()
 
@@ -20,6 +21,12 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  self.nameLabel.text = ((NavigationViewController*)(self.navigationController)).username;
+  NSLog(@"curr user:%@", ((NavigationViewController*)(self.navigationController)).username);
+}
+
 - (IBAction)pushProfile:(id)sender {
   ProfileViewController *profilevc = [[ProfileViewController alloc] init];
   [self.navigationController pushViewController:profilevc animated:YES];
@@ -31,6 +38,8 @@
 }
 
 - (IBAction)logout:(id)sender {
+  ((NavigationViewController*)(self.navigationController)).username = @"";
+  ((NavigationViewController*)(self.navigationController)).userid = @"";
   [self.navigationController popViewControllerAnimated:YES];
 }
 
