@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
   [self setNavigationBarHidden:YES];
-  ViewController *vc = [[ViewController alloc] init];
+  LoginViewController *vc = [[LoginViewController alloc] init];
   [self pushViewController:vc animated:NO];
     // Do any additional setup after loading the view from its nib.
 }

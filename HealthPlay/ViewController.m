@@ -30,6 +30,10 @@
   [self.navigationController pushViewController:activityvc animated:YES];
 }
 
+- (IBAction)logout:(id)sender {
+  [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (IBAction)pushPreGame:(id)sender {
   PreGameViewController *pregamevc = [[PreGameViewController alloc] init];
   [self.navigationController pushViewController:pregamevc animated:YES];
