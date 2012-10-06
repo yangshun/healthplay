@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "NavigationViewController.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  self.nameLabel.text = ((NavigationViewController*)(self.navigationController)).username;
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

@@ -17,5 +17,6 @@
 - (IBAction)pushActivity:(id)sender;
 - (IBAction)pushPreGame:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 
 @end
