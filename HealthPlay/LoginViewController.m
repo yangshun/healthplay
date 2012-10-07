@@ -48,6 +48,11 @@
   
   User *newUser = [[User alloc] initWithUserUsername:userString Password:passwordString Points:0];
   [newUser saveWithCompletion:^(BOOL respond) {
+    User *alluser = [[User alloc] init];
+    [alluser list:nil onComplete:^(NSArray *respond) {
+      ((NavigationViewController*)(self.navigationController)).allUsersArray = respond;
+    } onFailure:^(NSError *respond) {}];
+    
     NSLog(@"Signup successful.");
     ((NavigationViewController*)(self.navigationController)).currUser = newUser;
     
@@ -71,7 +76,6 @@
   User *user = [[User alloc] init];
   [user list:nil onComplete:^(NSArray *respond) {
     ((NavigationViewController*)(self.navigationController)).allUsersArray = respond;
-    NSLog(@"Total users: %d", [respond count]);
     BOOL userMatched = NO;
     for (int i = 0; i < [respond count]; i++) {
       User *currentUser = (User *)[respond objectAtIndex:i];
