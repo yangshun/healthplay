@@ -7,6 +7,7 @@
 //
 
 #import "GameViewController.h"
+#import "NavigationViewController.h"
 
 @interface GameViewController () {
   IBOutlet UILabel *heartQty;
@@ -30,6 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  score.text = [NSString stringWithFormat:@"%d", ((NavigationViewController*)self.navigationController).currUser.points];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -45,12 +47,19 @@
 }
 
 - (IBAction)increaseHearts:(id)sender {
-  
+  heartQty.text = [NSString stringWithFormat:@"%d", [heartQty.text intValue] + 1];
+  score.text = [NSString stringWithFormat:@"%d", [score.text intValue] - 2];
 }
 
 - (IBAction)increasePotions:(id)sender {
-  
+  potionQty.text = [NSString stringWithFormat:@"%d", [potionQty.text intValue] + 1];
+  score.text = [NSString stringWithFormat:@"%d", [score.text intValue] - 3];
 }
+
+- (IBAction)startgame:(id)sender {
+  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"bomberman://"]];
+}
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
