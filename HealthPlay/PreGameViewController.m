@@ -7,6 +7,7 @@
 //
 
 #import "PreGameViewController.h"
+#import "GameViewController.h"
 
 @interface PreGameViewController ()
 
@@ -27,6 +28,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (IBAction)back:(id)sender {
+  [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)startgame:(id)sender {
+  GameViewController *vc = [[GameViewController alloc] init];
+  [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)viewDidUnload

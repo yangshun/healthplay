@@ -53,7 +53,7 @@
             NSLog(@"Error: %@", error);
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"Error loading this item!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [alertView show];
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [self.navigationController popViewControllerAnimated:YES];
         }];
     }
     return self;
@@ -90,7 +90,8 @@
   }];
   currUser.points += [self.productGrade.text intValue];
   [currUser saveWithCompletion:^(BOOL completion){} onFailure:^(NSError *respond){}];
-  [self.navigationController popViewControllerAnimated:YES];
+  UIViewController *vc = [self.navigationController.viewControllers objectAtIndex:1];
+  [self.navigationController popToViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
