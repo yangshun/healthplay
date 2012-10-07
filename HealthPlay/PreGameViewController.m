@@ -35,8 +35,7 @@
 }
 
 - (IBAction)startgame:(id)sender {
-  GameViewController *vc = [[GameViewController alloc] init];
-  [self.navigationController pushViewController:vc animated:YES];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"bomberman://"]];
 }
 
 - (void)viewDidUnload
