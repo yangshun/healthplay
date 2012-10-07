@@ -11,6 +11,7 @@
 #import "Food.h"
 #import "Mash.h"
 #import "User.h"
+#import "Quiz.h"
 
 @interface ViewController ()
 
@@ -33,19 +34,26 @@
   
   Food *food = [[Food alloc] init];
   [food list:nil onComplete:^(NSArray *respond) {
+    NSLog(@"food count: %d", respond.count);
     for (id obj in respond) {
       [self.feedArray addObject:obj];
     }
+    Mash *mash = [[Mash alloc] init];
+    [mash list:nil onComplete:^(NSArray *respond) {
+      NSLog(@"mash count: %d", respond.count);
+      for (id obj in respond) {
+        [self.feedArray addObject:obj];
+      }
+      Quiz *quiz = [[Quiz alloc] init];
+      [quiz list:nil onComplete:^(NSArray *respond) {
+        NSLog(@"quiz count: %d", respond.count);
+        for (id obj in respond) {
+          [self.feedArray addObject:obj];
+        }
+        [self sortFeed];
+      } onFailure:^(NSError *error){}];
+    } onFailure:^(NSError *error){}];
   } onFailure:^(NSError *error){}];
-  
-  Mash *mash = [[Mash alloc] init];
-  [mash list:nil onComplete:^(NSArray *respond) {
-    for (id obj in respond) {
-      [self.feedArray addObject:obj];
-    }
-    [self sortFeed];
-  } onFailure:^(NSError *error){}];
-  
 }
 
 - (void)sortFeed {
@@ -67,13 +75,20 @@
       curYLoc += view.frame.size.height + 15;
     } else if ([[self.feedArray objectAtIndex:i] isKindOfClass:[Mash class]]) {
       Mash *temp = [self.feedArray objectAtIndex:i];
-      NSLog(@"Mash cat: %@, time: %@, points: %d, name: %@", temp.category, temp.time, temp.points, [self nameFromUserid:temp._master_id]);
-       NSString *string = [NSString stringWithFormat:@"%@ score %d points for playing %@ FoodMash!", [self nameFromUserid:temp._master_id], temp.points, temp.category];
+      NSString *string = [NSString stringWithFormat:@"%@ scored %d points for playing %@ FoodMash!", [self nameFromUserid:temp._master_id], temp.points, temp.category];
+      UIView *view = [self createViewFromString:string andIndex:0];
+      [self.feedView addSubview:view];
+      view.frame = CGRectMake(0, curYLoc, view.frame.size.width, view.frame.size.height);
+      curYLoc += view.frame.size.height + 15;
+    } else if ([[self.feedArray objectAtIndex:i] isKindOfClass:[Quiz class]]) {
+      Quiz *temp = [self.feedArray objectAtIndex:i];
+      NSString *string = [NSString stringWithFormat:@"%@ scored %d points in FoodQuiz!", [self nameFromUserid:temp._master_id], temp.score];
       UIView *view = [self createViewFromString:string andIndex:0];
       [self.feedView addSubview:view];
       view.frame = CGRectMake(0, curYLoc, view.frame.size.width, view.frame.size.height);
       curYLoc += view.frame.size.height + 15;
     }
+      
   }
   self.feedView.contentSize = CGSizeMake(280, curYLoc);
 }
