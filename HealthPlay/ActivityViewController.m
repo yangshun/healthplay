@@ -20,7 +20,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.foodRate = [[FoodRate alloc] initWithDelegate:self];
     }
     return self;
 }
@@ -43,6 +42,18 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)startFoodRate:(id)sender
+{
+    self.foodRate = [[FoodRate alloc] initWithDelegate:self];
+    [self presentViewController:self.foodRate.zbarController animated:YES completion:nil];
+}
+
+- (IBAction)startFoodMash:(id)sender
+{
+    
+}
+
+#pragma mark FoodRate delegate
 - (void) barcodeDetected:(ZBarSymbol *)barcode urlRequest:(NSURLRequest *)urlRequest
 {
     ProductDescriptionController *productController = [[ProductDescriptionController alloc] initWithRequest:urlRequest];
@@ -52,9 +63,5 @@
     }];
 }
 
-- (IBAction)rateFood:(id)sender
-{
-    [self presentViewController:self.foodRate.zbarController animated:YES completion:nil];
-}
 
 @end

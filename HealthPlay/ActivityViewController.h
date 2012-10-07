@@ -11,6 +11,6 @@
 
 @interface ActivityViewController : UIViewController<FoodRateDelegate>
 
-- (IBAction)rateFood:(id)sender;
-
+- (IBAction)startFoodRate:(id)sender;
+- (IBAction)startFoodMash:(id)sender;
 @end
