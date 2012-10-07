@@ -6,13 +6,10 @@
 
 #import <Foundation/Foundation.h>
 #import "CloudyRecResource.h"
-#import "User.h"
 @interface Quiz : CloudyRecResource
 {
   @private
   NSString* quizResKey;
-  NSString* _master_id;
-  NSString* user;
   int score;
   NSString* points;
   NSDate* time;
@@ -20,26 +17,22 @@
 }
 
 @property(nonatomic,retain) NSString *quizResKey;
-@property(nonatomic,retain) NSString *_master_id;
-@property(nonatomic,retain) NSString *user;
 @property(nonatomic,assign) int score;
 @property(nonatomic,retain) NSString *points;
 @property(nonatomic,retain) NSDate *time;
 
 
--(id)initWithQuizUser:(NSString*)user_ Score:(int)score_ Points:(NSString*)points_ Time:(NSDate*)time_;
+-(id)initWithQuizScore:(int)score_ Points:(NSString*)points_ Time:(NSDate*)time_;
 
 -(id)init;
 -(NSString*)getId;
 -(NSString*)getResourceKey;
--(NSString*)getUserId;
 -(void)setData:(NSDictionary*)data;
 
 -(void)load:(NSString*)id_ onComplete:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
 -(void) list:(NSString*)query onComplete:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
 -(void) list:(NSString*)query Limit:(int)limit Page:(int)page onComplete:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
 
--(void)setUser:(User*)obj;
 -(void)saveWithCompletion:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
 -(void)deleteWithCompletion:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
 @end

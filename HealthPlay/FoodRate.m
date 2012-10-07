@@ -56,7 +56,7 @@
                             reason,
                             upc,
                             apiKey];
-    
+    NSLog(requestUrl);
     return requestUrl;
 }
 

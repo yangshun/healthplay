@@ -11,6 +11,7 @@
 
 @interface ProfileViewController () {
   IBOutlet UILabel *nameLabel;
+  IBOutlet UILabel *scoreLabel;
   IBOutlet UIScrollView *scrollView;
   UIImage *boy1;
   UIImage *boy2;
@@ -59,7 +60,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  nameLabel.text = ((NavigationViewController*)(self.navigationController)).username;
+  nameLabel.text = ((NavigationViewController*)(self.navigationController)).currUser.username;
+  scoreLabel.text = [NSString stringWithFormat:@"%d", ((NavigationViewController*)(self.navigationController)).currUser.points];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView

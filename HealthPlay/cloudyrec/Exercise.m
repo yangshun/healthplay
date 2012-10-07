@@ -4,27 +4,23 @@
 //  Copyright (c) 2012 Rival Edge Pte Ltd. All rights reserved.
 //
 
-#import "User.h"
 #import "Exercise.h"
 @interface Exercise()
 @end
 @implementation Exercise 
 @synthesize exerciseResKey;
-@synthesize _master_id;
 @synthesize distance;
 @synthesize points;
 @synthesize time;
-@synthesize user;
 @synthesize frienduser;
 @synthesize type;
 
--(id)initWithExerciseDistance:(NSString*)distance_ Points:(NSString*)points_ Time:(NSDate*)time_ User:(NSString*)user_ Frienduser:(NSString*)frienduser_ Type:(int)type_{
+-(id)initWithExerciseDistance:(NSString*)distance_ Points:(NSString*)points_ Time:(NSDate*)time_ Frienduser:(NSString*)frienduser_ Type:(int)type_{
 
   if(self=[super init]) {
 	    distance=[distance_ copy];
 	    points=[points_ copy];
 	    time=[time_ copy];
-	    user=[user_ copy];
 	    frienduser=[frienduser_ copy];
 	    type=type_;
     exerciseResKey=@"6BENgryQ7v";
@@ -37,7 +33,6 @@
   [distance release];
   [points release];
   [time release];
-  [user release];
   [frienduser release];
   [super dealloc];
 }
@@ -58,9 +53,6 @@
 return exerciseResKey;
 }
 
--(NSString*)getUserId{
-  return _master_id;
-}
 -(void)load:(NSString*)id_ onComplete:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail{
    [self loadFromCloud:id_ onComplete:^(NSDictionary* data){
     NSDictionary* dict=[NSDictionary dictionaryWithDictionary:data];
@@ -74,14 +66,6 @@ return exerciseResKey;
   }onFailure:^(NSError* error){
     fail(error);
   }];
-}
--(void)setUser:(User*)obj {
-  if([obj getId]==nil) {
-    @throw ([NSException exceptionWithName:@"Error" reason:@"unsaved master object exception" userInfo:nil]);
-  }
-  else {
-    self._master_id = [obj getId];
-  }
 }
 
 -(void) list:(NSString*)query onComplete:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
@@ -112,7 +96,6 @@ return exerciseResKey;
 
 -(void)saveWithCompletion:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
   NSMutableDictionary* data = [[NSMutableDictionary alloc] init];
-  [data setValue:self._master_id forKey:@"_master_id"];
 	//date format
 	NSDateFormatter *df = [[NSDateFormatter alloc] init];
 	[df setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease]];
@@ -123,7 +106,6 @@ return exerciseResKey;
   [data setValue:self.points forKey:@"points"];
 	  NSString* tmp_date_time=[df stringFromDate:self.time];
 	  [data setValue:tmp_date_time forKey:@"time"];
-  [data setValue:self.user forKey:@"user"];
   [data setValue:self.frienduser forKey:@"frienduser"];
 	  [data setValue:[NSNumber numberWithInteger:self.type] forKey:@"type"];
 
@@ -184,7 +166,6 @@ return exerciseResKey;
 
 -(void)setData:(NSDictionary*)data {
   self._id=[data objectForKey:@"id"];
-  self._master_id =[data objectForKey:@"_master_id"]; 
 
 	//date format
 	NSDateFormatter *df = [[NSDateFormatter alloc] init];
@@ -197,7 +178,6 @@ return exerciseResKey;
   NSString* date_str_time=[data objectForKey:@"time"];
   self.time=[df dateFromString:date_str_time];
 
-	  self.user=[data objectForKey:@"user"];
 	  self.frienduser=[data objectForKey:@"frienduser"];
 	  self.type=[[data objectForKey:@"type"] intValue];
         [df release];

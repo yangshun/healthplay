@@ -4,22 +4,18 @@
 //  Copyright (c) 2012 Rival Edge Pte Ltd. All rights reserved.
 //
 
-#import "User.h"
 #import "Quiz.h"
 @interface Quiz()
 @end
 @implementation Quiz 
 @synthesize quizResKey;
-@synthesize _master_id;
-@synthesize user;
 @synthesize score;
 @synthesize points;
 @synthesize time;
 
--(id)initWithQuizUser:(NSString*)user_ Score:(int)score_ Points:(NSString*)points_ Time:(NSDate*)time_{
+-(id)initWithQuizScore:(int)score_ Points:(NSString*)points_ Time:(NSDate*)time_{
 
   if(self=[super init]) {
-	    user=[user_ copy];
 	    score=score_;
 	    points=[points_ copy];
 	    time=[time_ copy];
@@ -30,7 +26,6 @@
 
 -(void)dealloc {
   [quizResKey release];
-  [user release];
   [points release];
   [time release];
   [super dealloc];
@@ -52,9 +47,6 @@
 return quizResKey;
 }
 
--(NSString*)getUserId{
-  return _master_id;
-}
 -(void)load:(NSString*)id_ onComplete:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail{
    [self loadFromCloud:id_ onComplete:^(NSDictionary* data){
     NSDictionary* dict=[NSDictionary dictionaryWithDictionary:data];
@@ -68,14 +60,6 @@ return quizResKey;
   }onFailure:^(NSError* error){
     fail(error);
   }];
-}
--(void)setUser:(User*)obj {
-  if([obj getId]==nil) {
-    @throw ([NSException exceptionWithName:@"Error" reason:@"unsaved master object exception" userInfo:nil]);
-  }
-  else {
-    self._master_id = [obj getId];
-  }
 }
 
 -(void) list:(NSString*)query onComplete:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
@@ -106,14 +90,12 @@ return quizResKey;
 
 -(void)saveWithCompletion:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
   NSMutableDictionary* data = [[NSMutableDictionary alloc] init];
-  [data setValue:self._master_id forKey:@"_master_id"];
 	//date format
 	NSDateFormatter *df = [[NSDateFormatter alloc] init];
 	[df setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease]];
 	NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
 	[df setTimeZone:timeZone];
 	[df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
-  [data setValue:self.user forKey:@"user"];
 	  [data setValue:[NSNumber numberWithInteger:self.score] forKey:@"score"];
   [data setValue:self.points forKey:@"points"];
 	  NSString* tmp_date_time=[df stringFromDate:self.time];
@@ -176,7 +158,6 @@ return quizResKey;
 
 -(void)setData:(NSDictionary*)data {
   self._id=[data objectForKey:@"id"];
-  self._master_id =[data objectForKey:@"_master_id"]; 
 
 	//date format
 	NSDateFormatter *df = [[NSDateFormatter alloc] init];
@@ -184,7 +165,6 @@ return quizResKey;
 	NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
 	[df setTimeZone:timeZone];
 	[df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
-	  self.user=[data objectForKey:@"user"];
 	  self.score=[[data objectForKey:@"score"] intValue];
 	  self.points=[data objectForKey:@"points"];
   NSString* date_str_time=[data objectForKey:@"time"];

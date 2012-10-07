@@ -23,8 +23,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  self.nameLabel.text = ((NavigationViewController*)(self.navigationController)).username;
-  NSLog(@"curr user:%@", ((NavigationViewController*)(self.navigationController)).username);
+  self.nameLabel.text = ((NavigationViewController*)(self.navigationController)).currUser.username;
 }
 
 - (IBAction)pushProfile:(id)sender {
@@ -38,8 +37,7 @@
 }
 
 - (IBAction)logout:(id)sender {
-  ((NavigationViewController*)(self.navigationController)).username = @"";
-  ((NavigationViewController*)(self.navigationController)).userid = @"";
+  ((NavigationViewController*)(self.navigationController)).currUser = nil;
   [self.navigationController popViewControllerAnimated:YES];
 }
 

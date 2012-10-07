@@ -12,6 +12,7 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *productName;
 @property (nonatomic, weak) IBOutlet UILabel *productGrade;
+@property (nonatomic, strong) NSString *imageURL;
 @property (nonatomic, weak) IBOutlet UIImageView *productImageView;
 
 - (id) initWithRequest:(NSURLRequest*)request;

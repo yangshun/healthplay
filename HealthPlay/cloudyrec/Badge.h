@@ -6,12 +6,10 @@
 
 #import <Foundation/Foundation.h>
 #import "CloudyRecResource.h"
-#import "User.h"
 @interface Badge : CloudyRecResource
 {
   @private
   NSString* badgeResKey;
-  NSString* _master_id;
   NSString* name;
   int badgeid;
   int type;
@@ -19,7 +17,6 @@
 }
 
 @property(nonatomic,retain) NSString *badgeResKey;
-@property(nonatomic,retain) NSString *_master_id;
 @property(nonatomic,retain) NSString *name;
 @property(nonatomic,assign) int badgeid;
 @property(nonatomic,assign) int type;
@@ -30,14 +27,12 @@
 -(id)init;
 -(NSString*)getId;
 -(NSString*)getResourceKey;
--(NSString*)getUserId;
 -(void)setData:(NSDictionary*)data;
 
 -(void)load:(NSString*)id_ onComplete:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
 -(void) list:(NSString*)query onComplete:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
 -(void) list:(NSString*)query Limit:(int)limit Page:(int)page onComplete:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
 
--(void)setUser:(User*)obj;
 -(void)saveWithCompletion:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
 -(void)deleteWithCompletion:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
 @end

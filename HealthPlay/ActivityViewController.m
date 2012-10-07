@@ -55,13 +55,18 @@
     [self presentViewController:controller animated:YES completion:nil];
 }
 
+- (IBAction)backButtonPressed:(id)sender
+{
+  [self.navigationController popViewControllerAnimated:YES];
+}
+
 #pragma mark FoodRate delegate
 - (void) barcodeDetected:(ZBarSymbol *)barcode urlRequest:(NSURLRequest *)urlRequest
 {
     ProductDescriptionController *productController = [[ProductDescriptionController alloc] initWithRequest:urlRequest];
     
-    [self.foodRate.zbarController dismissViewControllerAnimated:YES completion:^{
-        [self presentViewController:productController animated:YES completion:nil];
+    [self.foodRate.zbarController dismissViewControllerAnimated:NO completion:^{
+        [self.navigationController pushViewController:productController animated:NO];
     }];
 }
 

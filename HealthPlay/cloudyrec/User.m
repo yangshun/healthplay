@@ -5,33 +5,21 @@
 //
 
 #import "User.h"
-#import "Quiz.h"
-#import "Exercise.h"
-#import "Food.h"
-#import "Badge.h"
 @interface User()
--(void)getQuizListReloadWithCompletion:(cloudyRecRespondBlock)completion Filter:(NSString *)query Limit:(int)limit Page:(int)page onFailure:(cloudyRecRespondErrorBlock)fail;
--(void)getExerciseListReloadWithCompletion:(cloudyRecRespondBlock)completion Filter:(NSString *)query Limit:(int)limit Page:(int)page onFailure:(cloudyRecRespondErrorBlock)fail;
--(void)getFoodListReloadWithCompletion:(cloudyRecRespondBlock)completion Filter:(NSString *)query Limit:(int)limit Page:(int)page onFailure:(cloudyRecRespondErrorBlock)fail;
--(void)getBadgeListReloadWithCompletion:(cloudyRecRespondBlock)completion Filter:(NSString *)query Limit:(int)limit Page:(int)page onFailure:(cloudyRecRespondErrorBlock)fail;
 @end
 @implementation User 
 @synthesize userResKey;
-@synthesize avatarid;
 @synthesize username;
 @synthesize password;
-@synthesize quizList;
-@synthesize exerciseList;
-@synthesize foodList;
-@synthesize badgeList;
+@synthesize points;
 
--(id)initWithUserAvatarid:(int)avatarid_ Username:(NSString*)username_ Password:(NSString*)password_{
+-(id)initWithUserUsername:(NSString*)username_ Password:(NSString*)password_ Points:(int)points_{
 
   if(self=[super init]) {
-	    avatarid=avatarid_;
 	    username=[username_ copy];
 	    password=[password_ copy];
-    userResKey=@"1BsNBr9QA5";
+	    points=points_;
+    userResKey=@"tBON5roQca";
   }
   return self;
 }
@@ -40,16 +28,12 @@
   [userResKey release];
   [username release];
   [password release];
-  [quizList release];
-  [exerciseList release];
-  [foodList release];
-  [badgeList release];
   [super dealloc];
 }
 
 -(id)init {
   if(self=[super init]) {
-	self.userResKey=@"1BsNBr9QA5";
+	self.userResKey=@"tBON5roQca";
   }
   return self;
 }
@@ -79,7 +63,7 @@ return userResKey;
 }
 
 -(void) list:(NSString*)query onComplete:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
-  [self list:query Limit:100 Page:1 onComplete:completion onFailure:fail];
+  [self list:query Limit:10 Page:1 onComplete:completion onFailure:fail];
 }
 
 -(void) list:(NSString*)query Limit:(int)limit Page:(int)page onComplete:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
@@ -103,322 +87,6 @@ return userResKey;
 
 }
 
--(void) getQuizListWithCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
-  [self getQuizListWithReload:NO Limit:10 Page:1 onCompletion:completion onFailure:fail];
-}
-
--(void)getQuizListReloadWithCompletion:(cloudyRecRespondBlock)completion Filter:(NSString *)query Limit:(int)limit Page:(int)page onFailure:(cloudyRecRespondErrorBlock)fail {
-  Quiz* exp =[[Quiz alloc] init];
-  
-  if(quizList){
-  	[quizList release];
-  }
-
-  quizList=[[NSMutableArray alloc] init];
-  
-  [self listChildren:exp filter:query Limit:limit Page:page onComplete:^(NSArray* resArr){
-    
-    [exp release];
-    for (int i=0;i<[resArr count]; i++) {
-      NSDictionary* obj=[resArr objectAtIndex:i];
-      Quiz* s = [[Quiz alloc] init];
-      [s setData:obj];
-      [self.quizList addObject:s];
-      [s release];
-    }
-    completion(self.quizList);
-  }onFailure:^(NSError* err){
-    fail(err);
-    [exp release];
-  }];
-}
-
--(void) getQuizListWithReload:(BOOL)reload Limit:(int)limit Page:(int)page onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
-  
-  if(self.quizList==nil)
-  {
-    [self getQuizListReloadWithCompletion:completion Filter:nil Limit:limit Page:page onFailure:fail];
-  }
-  else {
-    if(reload) {
-      [self getQuizListReloadWithCompletion:completion Filter:nil Limit:limit Page:page onFailure:fail];
-    }
-    else {
-      completion(self.quizList);
-    }
-  }
-  
-}
-
--(void) getQuizListWithReload:(BOOL)reload Filter:(NSString *)query Limit:(int)limit Page:(int)page onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail
-{
-    if(self.quizList==nil)
-    {
-      [self getQuizListReloadWithCompletion:completion Filter:query Limit:limit Page:page onFailure:fail];
-    }
-    else {
-        if(reload) {
-	  [self getQuizListReloadWithCompletion:completion Filter:query Limit:limit Page:page onFailure:fail];
-        }
-        else {
-	  completion(self.quizList);
-        }
-    }
-}
-
--(void)getQuizListWithReload:(BOOL)reload onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
-  
-  if(self.quizList==nil)
-  {
-    [self getQuizListReloadWithCompletion:completion Filter:nil Limit:10 Page:1 onFailure:fail];
-  }
-  else {
-    if(reload) {
-      [self getQuizListReloadWithCompletion:completion Filter:nil Limit:10 Page:1 onFailure:fail];
-    }
-    else {
-    completion(self.quizList);
-    }
-  }
-}
-
--(void) getExerciseListWithCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
-  [self getExerciseListWithReload:NO Limit:10 Page:1 onCompletion:completion onFailure:fail];
-}
-
--(void)getExerciseListReloadWithCompletion:(cloudyRecRespondBlock)completion Filter:(NSString *)query Limit:(int)limit Page:(int)page onFailure:(cloudyRecRespondErrorBlock)fail {
-  Exercise* exp =[[Exercise alloc] init];
-  
-  if(exerciseList){
-  	[exerciseList release];
-  }
-
-  exerciseList=[[NSMutableArray alloc] init];
-  
-  [self listChildren:exp filter:query Limit:limit Page:page onComplete:^(NSArray* resArr){
-    
-    [exp release];
-    for (int i=0;i<[resArr count]; i++) {
-      NSDictionary* obj=[resArr objectAtIndex:i];
-      Exercise* s = [[Exercise alloc] init];
-      [s setData:obj];
-      [self.exerciseList addObject:s];
-      [s release];
-    }
-    completion(self.exerciseList);
-  }onFailure:^(NSError* err){
-    fail(err);
-    [exp release];
-  }];
-}
-
--(void) getExerciseListWithReload:(BOOL)reload Limit:(int)limit Page:(int)page onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
-  
-  if(self.exerciseList==nil)
-  {
-    [self getExerciseListReloadWithCompletion:completion Filter:nil Limit:limit Page:page onFailure:fail];
-  }
-  else {
-    if(reload) {
-      [self getExerciseListReloadWithCompletion:completion Filter:nil Limit:limit Page:page onFailure:fail];
-    }
-    else {
-      completion(self.exerciseList);
-    }
-  }
-  
-}
-
--(void) getExerciseListWithReload:(BOOL)reload Filter:(NSString *)query Limit:(int)limit Page:(int)page onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail
-{
-    if(self.exerciseList==nil)
-    {
-      [self getExerciseListReloadWithCompletion:completion Filter:query Limit:limit Page:page onFailure:fail];
-    }
-    else {
-        if(reload) {
-	  [self getExerciseListReloadWithCompletion:completion Filter:query Limit:limit Page:page onFailure:fail];
-        }
-        else {
-	  completion(self.exerciseList);
-        }
-    }
-}
-
--(void)getExerciseListWithReload:(BOOL)reload onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
-  
-  if(self.exerciseList==nil)
-  {
-    [self getExerciseListReloadWithCompletion:completion Filter:nil Limit:10 Page:1 onFailure:fail];
-  }
-  else {
-    if(reload) {
-      [self getExerciseListReloadWithCompletion:completion Filter:nil Limit:10 Page:1 onFailure:fail];
-    }
-    else {
-    completion(self.exerciseList);
-    }
-  }
-}
-
--(void) getFoodListWithCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
-  [self getFoodListWithReload:NO Limit:10 Page:1 onCompletion:completion onFailure:fail];
-}
-
--(void)getFoodListReloadWithCompletion:(cloudyRecRespondBlock)completion Filter:(NSString *)query Limit:(int)limit Page:(int)page onFailure:(cloudyRecRespondErrorBlock)fail {
-  Food* exp =[[Food alloc] init];
-  
-  if(foodList){
-  	[foodList release];
-  }
-
-  foodList=[[NSMutableArray alloc] init];
-  
-  [self listChildren:exp filter:query Limit:limit Page:page onComplete:^(NSArray* resArr){
-    
-    [exp release];
-    for (int i=0;i<[resArr count]; i++) {
-      NSDictionary* obj=[resArr objectAtIndex:i];
-      Food* s = [[Food alloc] init];
-      [s setData:obj];
-      [self.foodList addObject:s];
-      [s release];
-    }
-    completion(self.foodList);
-  }onFailure:^(NSError* err){
-    fail(err);
-    [exp release];
-  }];
-}
-
--(void) getFoodListWithReload:(BOOL)reload Limit:(int)limit Page:(int)page onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
-  
-  if(self.foodList==nil)
-  {
-    [self getFoodListReloadWithCompletion:completion Filter:nil Limit:limit Page:page onFailure:fail];
-  }
-  else {
-    if(reload) {
-      [self getFoodListReloadWithCompletion:completion Filter:nil Limit:limit Page:page onFailure:fail];
-    }
-    else {
-      completion(self.foodList);
-    }
-  }
-  
-}
-
--(void) getFoodListWithReload:(BOOL)reload Filter:(NSString *)query Limit:(int)limit Page:(int)page onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail
-{
-    if(self.foodList==nil)
-    {
-      [self getFoodListReloadWithCompletion:completion Filter:query Limit:limit Page:page onFailure:fail];
-    }
-    else {
-        if(reload) {
-	  [self getFoodListReloadWithCompletion:completion Filter:query Limit:limit Page:page onFailure:fail];
-        }
-        else {
-	  completion(self.foodList);
-        }
-    }
-}
-
--(void)getFoodListWithReload:(BOOL)reload onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
-  
-  if(self.foodList==nil)
-  {
-    [self getFoodListReloadWithCompletion:completion Filter:nil Limit:10 Page:1 onFailure:fail];
-  }
-  else {
-    if(reload) {
-      [self getFoodListReloadWithCompletion:completion Filter:nil Limit:10 Page:1 onFailure:fail];
-    }
-    else {
-    completion(self.foodList);
-    }
-  }
-}
-
--(void) getBadgeListWithCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
-  [self getBadgeListWithReload:NO Limit:10 Page:1 onCompletion:completion onFailure:fail];
-}
-
--(void)getBadgeListReloadWithCompletion:(cloudyRecRespondBlock)completion Filter:(NSString *)query Limit:(int)limit Page:(int)page onFailure:(cloudyRecRespondErrorBlock)fail {
-  Badge* exp =[[Badge alloc] init];
-  
-  if(badgeList){
-  	[badgeList release];
-  }
-
-  badgeList=[[NSMutableArray alloc] init];
-  
-  [self listChildren:exp filter:query Limit:limit Page:page onComplete:^(NSArray* resArr){
-    
-    [exp release];
-    for (int i=0;i<[resArr count]; i++) {
-      NSDictionary* obj=[resArr objectAtIndex:i];
-      Badge* s = [[Badge alloc] init];
-      [s setData:obj];
-      [self.badgeList addObject:s];
-      [s release];
-    }
-    completion(self.badgeList);
-  }onFailure:^(NSError* err){
-    fail(err);
-    [exp release];
-  }];
-}
-
--(void) getBadgeListWithReload:(BOOL)reload Limit:(int)limit Page:(int)page onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
-  
-  if(self.badgeList==nil)
-  {
-    [self getBadgeListReloadWithCompletion:completion Filter:nil Limit:limit Page:page onFailure:fail];
-  }
-  else {
-    if(reload) {
-      [self getBadgeListReloadWithCompletion:completion Filter:nil Limit:limit Page:page onFailure:fail];
-    }
-    else {
-      completion(self.badgeList);
-    }
-  }
-  
-}
-
--(void) getBadgeListWithReload:(BOOL)reload Filter:(NSString *)query Limit:(int)limit Page:(int)page onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail
-{
-    if(self.badgeList==nil)
-    {
-      [self getBadgeListReloadWithCompletion:completion Filter:query Limit:limit Page:page onFailure:fail];
-    }
-    else {
-        if(reload) {
-	  [self getBadgeListReloadWithCompletion:completion Filter:query Limit:limit Page:page onFailure:fail];
-        }
-        else {
-	  completion(self.badgeList);
-        }
-    }
-}
-
--(void)getBadgeListWithReload:(BOOL)reload onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
-  
-  if(self.badgeList==nil)
-  {
-    [self getBadgeListReloadWithCompletion:completion Filter:nil Limit:10 Page:1 onFailure:fail];
-  }
-  else {
-    if(reload) {
-      [self getBadgeListReloadWithCompletion:completion Filter:nil Limit:10 Page:1 onFailure:fail];
-    }
-    else {
-    completion(self.badgeList);
-    }
-  }
-}
-
 
 -(void)saveWithCompletion:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
   NSMutableDictionary* data = [[NSMutableDictionary alloc] init];
@@ -428,9 +96,9 @@ return userResKey;
 	NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
 	[df setTimeZone:timeZone];
 	[df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
-	  [data setValue:[NSNumber numberWithInteger:self.avatarid] forKey:@"avatarid"];
   [data setValue:self.username forKey:@"username"];
   [data setValue:self.password forKey:@"password"];
+	  [data setValue:[NSNumber numberWithInteger:self.points] forKey:@"points"];
 
   [df release];
   if(self._id==nil)
@@ -496,9 +164,9 @@ return userResKey;
 	NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
 	[df setTimeZone:timeZone];
 	[df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
-	  self.avatarid=[[data objectForKey:@"avatarid"] intValue];
 	  self.username=[data objectForKey:@"username"];
 	  self.password=[data objectForKey:@"password"];
+	  self.points=[[data objectForKey:@"points"] intValue];
         [df release];
 }
 @end

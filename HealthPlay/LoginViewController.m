@@ -45,11 +45,12 @@
   
   NSString *userString = username.text;
   NSString *passwordString = password.text;
-  User *newUser = [[User alloc] initWithUserAvatarid:1 Username:userString Password:passwordString];
+  
+  User *newUser = [[User alloc] initWithUserUsername:userString Password:passwordString Points:0];
   [newUser saveWithCompletion:^(BOOL respond) {
     NSLog(@"Signup successful.");
-    ((NavigationViewController*)(self.navigationController)).username = userString;
-    ((NavigationViewController*)(self.navigationController)).userid = [newUser getId];
+    ((NavigationViewController*)(self.navigationController)).currUser = newUser;
+    
     ViewController *vc = [[ViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
     NSLog(@"new user id:%@", [newUser getId]);
@@ -78,9 +79,8 @@
       
       if ([currentUser.username isEqualToString:userString] &&
           [currentUser.password isEqualToString:passwordString]) {
-        ((NavigationViewController*)(self.navigationController)).username = userString;
-        ((NavigationViewController*)(self.navigationController)).userid = [currentUser getId];
-        NSLog(@"user id: %@", [currentUser getId]);
+        ((NavigationViewController*)(self.navigationController)).currUser = currentUser;
+        
         ViewController *vc = [[ViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
         userMatched = YES;

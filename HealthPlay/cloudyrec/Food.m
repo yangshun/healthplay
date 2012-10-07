@@ -4,29 +4,23 @@
 //  Copyright (c) 2012 Rival Edge Pte Ltd. All rights reserved.
 //
 
-#import "User.h"
 #import "Food.h"
 @interface Food()
 @end
 @implementation Food 
 @synthesize foodResKey;
-@synthesize _master_id;
 @synthesize name;
-@synthesize image;
 @synthesize grade;
-@synthesize user;
 @synthesize time;
-@synthesize comment;
+@synthesize imageurl;
 
--(id)initWithFoodName:(NSString*)name_ Image:(NSString*)image_ Grade:(NSString*)grade_ User:(NSString*)user_ Time:(NSDate*)time_ Comment:(NSString*)comment_{
+-(id)initWithFoodName:(NSString*)name_ Grade:(NSString*)grade_ Time:(NSDate*)time_ Imageurl:(NSString*)imageurl_{
 
   if(self=[super init]) {
 	    name=[name_ copy];
-	    image=[image_ copy];
 	    grade=[grade_ copy];
-	    user=[user_ copy];
 	    time=[time_ copy];
-	    comment=[comment_ copy];
+	    imageurl=[imageurl_ copy];
     foodResKey=@"YBJNWrtQLC";
   }
   return self;
@@ -35,11 +29,9 @@
 -(void)dealloc {
   [foodResKey release];
   [name release];
-  [image release];
   [grade release];
-  [user release];
   [time release];
-  [comment release];
+  [imageurl release];
   [super dealloc];
 }
 
@@ -59,9 +51,6 @@
 return foodResKey;
 }
 
--(NSString*)getUserId{
-  return _master_id;
-}
 -(void)load:(NSString*)id_ onComplete:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail{
    [self loadFromCloud:id_ onComplete:^(NSDictionary* data){
     NSDictionary* dict=[NSDictionary dictionaryWithDictionary:data];
@@ -75,14 +64,6 @@ return foodResKey;
   }onFailure:^(NSError* error){
     fail(error);
   }];
-}
--(void)setUser:(User*)obj {
-  if([obj getId]==nil) {
-    @throw ([NSException exceptionWithName:@"Error" reason:@"unsaved master object exception" userInfo:nil]);
-  }
-  else {
-    self._master_id = [obj getId];
-  }
 }
 
 -(void) list:(NSString*)query onComplete:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
@@ -113,7 +94,6 @@ return foodResKey;
 
 -(void)saveWithCompletion:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
   NSMutableDictionary* data = [[NSMutableDictionary alloc] init];
-  [data setValue:self._master_id forKey:@"_master_id"];
 	//date format
 	NSDateFormatter *df = [[NSDateFormatter alloc] init];
 	[df setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease]];
@@ -121,12 +101,10 @@ return foodResKey;
 	[df setTimeZone:timeZone];
 	[df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
   [data setValue:self.name forKey:@"name"];
-  [data setValue:self.image forKey:@"image"];
   [data setValue:self.grade forKey:@"grade"];
-  [data setValue:self.user forKey:@"user"];
 	  NSString* tmp_date_time=[df stringFromDate:self.time];
 	  [data setValue:tmp_date_time forKey:@"time"];
-  [data setValue:self.comment forKey:@"comment"];
+  [data setValue:self.imageurl forKey:@"imageurl"];
 
   [df release];
   if(self._id==nil)
@@ -185,7 +163,6 @@ return foodResKey;
 
 -(void)setData:(NSDictionary*)data {
   self._id=[data objectForKey:@"id"];
-  self._master_id =[data objectForKey:@"_master_id"]; 
 
 	//date format
 	NSDateFormatter *df = [[NSDateFormatter alloc] init];
@@ -194,13 +171,11 @@ return foodResKey;
 	[df setTimeZone:timeZone];
 	[df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
 	  self.name=[data objectForKey:@"name"];
-	  self.image=[data objectForKey:@"image"];
 	  self.grade=[data objectForKey:@"grade"];
-	  self.user=[data objectForKey:@"user"];
   NSString* date_str_time=[data objectForKey:@"time"];
   self.time=[df dateFromString:date_str_time];
 
-	  self.comment=[data objectForKey:@"comment"];
+	  self.imageurl=[data objectForKey:@"imageurl"];
         [df release];
 }
 @end

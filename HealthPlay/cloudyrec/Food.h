@@ -6,44 +6,35 @@
 
 #import <Foundation/Foundation.h>
 #import "CloudyRecResource.h"
-#import "User.h"
 @interface Food : CloudyRecResource
 {
   @private
   NSString* foodResKey;
-  NSString* _master_id;
   NSString* name;
-  NSString* image;
   NSString* grade;
-  NSString* user;
   NSDate* time;
-  NSString* comment;
+  NSString* imageurl;
 
 }
 
 @property(nonatomic,retain) NSString *foodResKey;
-@property(nonatomic,retain) NSString *_master_id;
 @property(nonatomic,retain) NSString *name;
-@property(nonatomic,retain) NSString *image;
 @property(nonatomic,retain) NSString *grade;
-@property(nonatomic,retain) NSString *user;
 @property(nonatomic,retain) NSDate *time;
-@property(nonatomic,retain) NSString *comment;
+@property(nonatomic,retain) NSString *imageurl;
 
 
--(id)initWithFoodName:(NSString*)name_ Image:(NSString*)image_ Grade:(NSString*)grade_ User:(NSString*)user_ Time:(NSDate*)time_ Comment:(NSString*)comment_;
+-(id)initWithFoodName:(NSString*)name_ Grade:(NSString*)grade_ Time:(NSDate*)time_ Imageurl:(NSString*)imageurl_;
 
 -(id)init;
 -(NSString*)getId;
 -(NSString*)getResourceKey;
--(NSString*)getUserId;
 -(void)setData:(NSDictionary*)data;
 
 -(void)load:(NSString*)id_ onComplete:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
 -(void) list:(NSString*)query onComplete:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
 -(void) list:(NSString*)query Limit:(int)limit Page:(int)page onComplete:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
 
--(void)setUser:(User*)obj;
 -(void)saveWithCompletion:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
 -(void)deleteWithCompletion:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
 @end

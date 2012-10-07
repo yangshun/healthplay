@@ -4,13 +4,11 @@
 //  Copyright (c) 2012 Rival Edge Pte Ltd. All rights reserved.
 //
 
-#import "User.h"
 #import "Badge.h"
 @interface Badge()
 @end
 @implementation Badge 
 @synthesize badgeResKey;
-@synthesize _master_id;
 @synthesize name;
 @synthesize badgeid;
 @synthesize type;
@@ -48,9 +46,6 @@
 return badgeResKey;
 }
 
--(NSString*)getUserId{
-  return _master_id;
-}
 -(void)load:(NSString*)id_ onComplete:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail{
    [self loadFromCloud:id_ onComplete:^(NSDictionary* data){
     NSDictionary* dict=[NSDictionary dictionaryWithDictionary:data];
@@ -64,14 +59,6 @@ return badgeResKey;
   }onFailure:^(NSError* error){
     fail(error);
   }];
-}
--(void)setUser:(User*)obj {
-  if([obj getId]==nil) {
-    @throw ([NSException exceptionWithName:@"Error" reason:@"unsaved master object exception" userInfo:nil]);
-  }
-  else {
-    self._master_id = [obj getId];
-  }
 }
 
 -(void) list:(NSString*)query onComplete:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
@@ -102,7 +89,6 @@ return badgeResKey;
 
 -(void)saveWithCompletion:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
   NSMutableDictionary* data = [[NSMutableDictionary alloc] init];
-  [data setValue:self._master_id forKey:@"_master_id"];
 	//date format
 	NSDateFormatter *df = [[NSDateFormatter alloc] init];
 	[df setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease]];
@@ -170,7 +156,6 @@ return badgeResKey;
 
 -(void)setData:(NSDictionary*)data {
   self._id=[data objectForKey:@"id"];
-  self._master_id =[data objectForKey:@"_master_id"]; 
 
 	//date format
 	NSDateFormatter *df = [[NSDateFormatter alloc] init];

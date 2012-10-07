@@ -9,6 +9,9 @@
 #import "ProductDescriptionController.h"
 #import "AFNetworking.h"
 #import "MBProgressHUD.h"
+#import "Food.h"
+#import "User.h"
+#import "NavigationViewController.h"
 
 @interface ProductDescriptionController ()
 @property (nonatomic, strong) AFJSONRequestOperation *jsonRequest;
@@ -33,7 +36,7 @@
             [self hideLoadingHUD];
             
             NSString *name = [JSON valueForKeyPath:@"name"];
-            NSString *imageURL = [JSON valueForKeyPath:@"image"];
+            self.imageURL = [JSON valueForKeyPath:@"image"];
             
             id grade = [JSON valueForKeyPath:@"fooducateGrade"];
             NSString *grade_score = [grade valueForKeyPath:@"score"];
@@ -41,9 +44,10 @@
             self.productName.text = name;
             self.productGrade.text = grade_score;
             
-            NSURL *url = [NSURL URLWithString:imageURL];
-            self.productImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
-            
+            NSURL *url = [NSURL URLWithString:self.imageURL];
+            UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+            self.productImageView.image = image;
+            NSLog(@"image size: %@", NSStringFromCGSize(image.size));
         } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
             [self hideLoadingHUD];
             NSLog(@"Error: %@", error);
@@ -62,6 +66,31 @@
     
     [self showLoadingHUD];
     [self.jsonRequest start];
+}
+
+- (IBAction)submit:(id)sender {
+  NSDate* now = [NSDate date];
+  
+  User *currUser = ((NavigationViewController*)(self.navigationController)).currUser;
+  NSString *userid = [currUser getId];
+  Food *food = [[Food alloc]initWithFoodName:self.productName.text
+                                       Grade:self.productGrade.text
+                                        Time:now
+                                    Imageurl:self.imageURL];
+  NSLog(@"hello");
+  NSLog(@"product name: %@", self.productName.text);
+  NSLog(@"grade: %@", self.productGrade.text);
+  NSLog(@"url: %@", self.imageURL);
+  NSLog(@"userid: %@", userid);
+  NSLog(@"bye");
+  [food set_master_id:userid];
+
+  [food saveWithCompletion:^(BOOL respond){} onFailure:^(NSError *respond){
+      NSLog(@"Error saving food: %@", respond.description);
+  }];
+  currUser.points += [self.productGrade.text intValue];
+  [currUser saveWithCompletion:^(BOOL completion){} onFailure:^(NSError *respond){}];
+  [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning

@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "LoginViewController.h"
+#import "User.h"
 
 @interface NavigationViewController : UINavigationController
 
-@property (strong, nonatomic) NSString *username;
-@property (strong, nonatomic) NSString *userid;
+@property (strong, nonatomic) User *currUser;
 
 @end
