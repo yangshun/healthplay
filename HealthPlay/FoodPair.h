@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FoodProduct.h"
 
 @interface FoodPair : NSObject
 
+- (id) initWithProduct:(FoodProduct*)firstProduct andProduct:(FoodProduct*)secondProduct;
+- (FoodProduct*) firstProduct;
+- (FoodProduct*) secondProduct;
 @end

@@ -9,9 +9,11 @@
 #import "FoodMash.h"
 #import "FoodMashController.h"
 #import "MBProgressHUD.h"
+#import "FoodPair.h"
 
 @interface FoodMashController ()
-
+@property (nonatomic, strong) FoodPair *currentPair;
+@property (nonatomic, strong) NSArray *pairs;
 @end
 
 @implementation FoodMashController
@@ -31,9 +33,14 @@
     // Do any additional setup after loading the view from its nib.
     
     [self showLoadingHUD];
-    [FoodMash loadData:^(NSArray *pairs) {
+    [FoodMash loadDataWithSearchTerm:@"bars" completion:^(NSArray *pairs) {
         [self hideLoadingHUD];
-        [self processPairs:pairs];
+        
+        if (pairs == nil) {
+            // something went wrong
+            return;
+        }
+        self.pairs = pairs;
     }];
 }
 
@@ -47,10 +54,6 @@
 {
     return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
             interfaceOrientation == UIInterfaceOrientationLandscapeRight);
-}
-
-- (void) processPairs:(NSArray*)pairs {
-    
 }
 
 - (void) showLoadingHUD

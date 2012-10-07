@@ -10,6 +10,6 @@
 
 @interface FoodMash : NSObject
 
-+ (void) loadData:(void(^)(NSArray* pairs))block;
++ (void) loadDataWithSearchTerm:(NSString*)searchTerm completion:(void(^)(NSArray* pairs))block;
 
 @end
