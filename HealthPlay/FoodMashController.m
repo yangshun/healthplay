@@ -10,9 +10,11 @@
 #import "FoodMashController.h"
 #import "MBProgressHUD.h"
 #import "FoodPair.h"
+#import "Constants.h"
 
 @interface FoodMashController ()
-@property (nonatomic, strong) FoodPair *currentPair;
+@property (nonatomic) int currentPair;
+@property (nonatomic) int score;
 @property (nonatomic, strong) NSArray *pairs;
 @end
 
@@ -23,6 +25,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.currentPair = 0;
+        self.score = 0;
     }
     return self;
 }
@@ -41,6 +45,7 @@
             return;
         }
         self.pairs = pairs;
+        [self showPairs:self.currentPair];
     }];
 }
 
@@ -50,10 +55,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (void) showPairs:(int)pairId
 {
-    return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
-            interfaceOrientation == UIInterfaceOrientationLandscapeRight);
+    self.pairLabel.text = [NSString stringWithFormat:@"%i", pairId];
+    FoodPair *pair = [self.pairs objectAtIndex:pairId];
+    [self.firstButton setImage:pair.firstProduct.image forState:UIControlStateNormal];
+    [self.secondButton setImage:pair.secondProduct.image forState:UIControlStateNormal];
 }
 
 - (void) showLoadingHUD
@@ -66,5 +73,34 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     });
+}
+
+- (void) nextRound {
+    self.currentPair++;
+    if (self.currentPair >= FOODMASH_ROUNDS) {
+        self.firstButton.hidden = YES;
+        self.secondButton.hidden = YES;
+        return;
+    }
+    [self showPairs:self.currentPair];
+}
+
+- (IBAction)firstButtonSelected:(id)sender {
+    FoodPair *pair = [self.pairs objectAtIndex:self.currentPair];
+    
+    if (!pair.shouldFlip) {
+        self.score++;
+        self.scoreLabel.text = [NSString stringWithFormat:@"%i", self.score];
+    }
+    [self nextRound];
+}
+- (IBAction)secondButtonSelected:(id)sender {
+    FoodPair *pair = [self.pairs objectAtIndex:self.currentPair];
+    
+    if (pair.shouldFlip) {
+        self.score++;
+        self.scoreLabel.text = [NSString stringWithFormat:@"%i", self.score];
+    }
+    [self nextRound];
 }
 @end

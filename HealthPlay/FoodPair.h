@@ -11,6 +11,8 @@
 
 @interface FoodPair : NSObject
 
+@property (nonatomic) BOOL shouldFlip;
+
 - (id) initWithProduct:(FoodProduct*)firstProduct andProduct:(FoodProduct*)secondProduct;
 - (FoodProduct*) firstProduct;
 - (FoodProduct*) secondProduct;

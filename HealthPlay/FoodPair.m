@@ -9,7 +9,6 @@
 #import "FoodPair.h"
 
 @interface FoodPair ()
-@property (nonatomic) BOOL shouldFlip;
 @property (nonatomic, strong) FoodProduct *answerProduct;
 @property (nonatomic, strong) FoodProduct *otherProduct;
 @end
