@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "NavigationViewController.h"
+#import "Food.h"
+#import "Mash.h"
 
 @interface ViewController ()
 
@@ -18,12 +20,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  self.feedArray = [[NSMutableArray alloc] init];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   self.nameLabel.text = ((NavigationViewController*)(self.navigationController)).currUser.username;
+  
+  Food *food = [[Food alloc] init];
+  [food list:nil onComplete:^(NSArray *respond) {
+    for (id obj in respond) {
+      [self.feedArray addObject:obj];
+    }
+  } onFailure:^(NSError *error){}];
+  
+  Mash *mash = [[Mash alloc] init];
+  [mash list:nil onComplete:^(NSArray *respond) {
+    for (id obj in respond) {
+      [self.feedArray addObject:obj];
+    }
+  } onFailure:^(NSError *error){}];
 }
 
 - (IBAction)pushProfile:(id)sender {

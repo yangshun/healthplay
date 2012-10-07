@@ -18,5 +18,6 @@
 - (IBAction)pushPreGame:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) NSMutableArray *feedArray;
 
 @end

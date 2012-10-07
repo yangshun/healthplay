@@ -13,5 +13,6 @@
 @interface NavigationViewController : UINavigationController
 
 @property (strong, nonatomic) User *currUser;
+@property (strong, nonatomic) NSArray *allUsersArray;
 
 @end
