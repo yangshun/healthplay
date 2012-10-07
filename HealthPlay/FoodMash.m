@@ -50,7 +50,7 @@
         NSLog(@"error fetching request: %@", [error localizedDescription]);
         block(nil);
     }];
-
+    
     [jsonRequest start];
 }
 
@@ -72,25 +72,22 @@
         FoodProduct *food = [[FoodProduct alloc] initWithName:name calories:calories imageData:imageData];
         [products addObject:food];
     }
-
-    [products sortUsingComparator:^NSComparisonResult(FoodProduct *obj1, FoodProduct *obj2) {
-        if (obj1.calories > obj2.calories) {
-            return (NSComparisonResult)NSOrderedDescending;
-        }
     
-        if (obj1.calories < obj2.calories) {
-            return (NSComparisonResult)NSOrderedAscending;
-        }
-        return (NSComparisonResult)NSOrderedSame;
-    }];
-    
-    for (int i=0;i<FOODMASH_ROUNDS;i++) {
-        FoodProduct *a = [products objectAtIndex:i];
-        FoodProduct *b = [products objectAtIndex:MAX_COUNT-i-1];
-        FoodPair *pair = [[FoodPair alloc] initWithProduct:a andProduct:b];
-        [productsPair addObject:pair];
+    // Shuffle array
+    for (NSUInteger i = 0; i < products.count; ++i) {
+        // Select a random element between i and end of array to swap with.
+        int nElements = products.count - i;
+        int n = (arc4random() % nElements) + i;
+        [products exchangeObjectAtIndex:i withObjectAtIndex:n];
     }
     
+    for (int i=0;i<FOODMASH_ROUNDS;i++) {
+        FoodProduct *a = [products objectAtIndex:i*2];
+        FoodProduct *b = [products objectAtIndex:i*2+1];
+        FoodPair *foodPair = [[FoodPair alloc] initWithProduct:a andProduct:b];
+        
+        [productsPair addObject:foodPair];
+    }
     block(productsPair);
 }
 

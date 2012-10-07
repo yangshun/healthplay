@@ -11,6 +11,7 @@
 #import "MBProgressHUD.h"
 #import "FoodPair.h"
 #import "Constants.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface FoodMashController ()
 @property (nonatomic) int currentPair;
@@ -57,10 +58,30 @@
 
 - (void) showPairs:(int)pairId
 {
-    self.pairLabel.text = [NSString stringWithFormat:@"%i", pairId];
+    float width = self.firstLabel.frame.size.width;
+    
+    self.pairLabel.text = [NSString stringWithFormat:@"%i", pairId+1];
+    
+    
     FoodPair *pair = [self.pairs objectAtIndex:pairId];
     [self.firstButton setImage:pair.firstProduct.image forState:UIControlStateNormal];
+    [self.firstButton setImage:pair.firstProduct.image forState:UIControlStateHighlighted];
+    self.firstButton.layer.borderWidth = 0;
+    [self.firstLabel setText:pair.firstProduct.name];
+    
+    
     [self.secondButton setImage:pair.secondProduct.image forState:UIControlStateNormal];
+    [self.secondButton setImage:pair.secondProduct.image forState:UIControlStateHighlighted];
+    self.secondButton.layer.borderWidth = 0;
+    [self.secondLabel setText:pair.secondProduct.name];
+    
+    [self.firstLabel sizeToFit];
+    CGRect rect = self.firstLabel.frame;
+    self.firstLabel.frame = CGRectMake(rect.origin.x, rect.origin.y, width, rect.size.height);
+    
+    [self.secondLabel sizeToFit];
+    rect = self.secondLabel.frame;
+    self.secondLabel.frame = CGRectMake(rect.origin.x, rect.origin.y, width, rect.size.height);
 }
 
 - (void) showLoadingHUD
