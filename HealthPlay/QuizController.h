@@ -12,6 +12,9 @@
 @property (nonatomic, weak) IBOutlet UIButton *buttonOne;
 @property (nonatomic, weak) IBOutlet UIButton *buttonTwo;
 @property (nonatomic, weak) IBOutlet UIButton *buttonThree;
+@property (nonatomic, weak) IBOutlet UILabel *questionLabel;
+@property (nonatomic, weak) IBOutlet UILabel *scoreLabel;
 
 - (id) initWithJSON:(id)JSON;
+- (IBAction)selectedAnswer:(UIButton*)sender;
 @end

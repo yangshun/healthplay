@@ -45,6 +45,8 @@
 		6098F77A1621F05E001D8136 /* QuizController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6098F7781621F05E001D8136 /* QuizController.m */; };
 		6098F77B1621F05E001D8136 /* QuizController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6098F7791621F05E001D8136 /* QuizController.xib */; };
 		6098F77E1621F1DA001D8136 /* QuizObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6098F77D1621F1DA001D8136 /* QuizObject.m */; };
+		6098F7821621F967001D8136 /* QuizScoreScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 6098F7801621F966001D8136 /* QuizScoreScreen.m */; };
+		6098F7831621F967001D8136 /* QuizScoreScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6098F7811621F966001D8136 /* QuizScoreScreen.xib */; };
 		6D1DA20616210F3F0052E5E4 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA20516210F3F0052E5E4 /* background@2x.png */; };
 		6D1DA2091621103A0052E5E4 /* label-profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA2081621103A0052E5E4 /* label-profile@2x.png */; };
 		6D1DA20E162110440052E5E4 /* boy-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA20A162110440052E5E4 /* boy-1@2x.png */; };
@@ -216,6 +218,9 @@
 		6098F7791621F05E001D8136 /* QuizController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizController.xib; sourceTree = "<group>"; };
 		6098F77C1621F1DA001D8136 /* QuizObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizObject.h; sourceTree = "<group>"; };
 		6098F77D1621F1DA001D8136 /* QuizObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizObject.m; sourceTree = "<group>"; };
+		6098F77F1621F965001D8136 /* QuizScoreScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizScoreScreen.h; sourceTree = "<group>"; };
+		6098F7801621F966001D8136 /* QuizScoreScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizScoreScreen.m; sourceTree = "<group>"; };
+		6098F7811621F966001D8136 /* QuizScoreScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizScoreScreen.xib; sourceTree = "<group>"; };
 		6D1DA20516210F3F0052E5E4 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		6D1DA2081621103A0052E5E4 /* label-profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "label-profile@2x.png"; sourceTree = "<group>"; };
 		6D1DA20A162110440052E5E4 /* boy-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "boy-1@2x.png"; sourceTree = "<group>"; };
@@ -528,6 +533,9 @@
 				6098F7791621F05E001D8136 /* QuizController.xib */,
 				6098F77C1621F1DA001D8136 /* QuizObject.h */,
 				6098F77D1621F1DA001D8136 /* QuizObject.m */,
+				6098F77F1621F965001D8136 /* QuizScoreScreen.h */,
+				6098F7801621F966001D8136 /* QuizScoreScreen.m */,
+				6098F7811621F966001D8136 /* QuizScoreScreen.xib */,
 			);
 			name = Quiz;
 			sourceTree = "<group>";
@@ -871,6 +879,7 @@
 				6D1DA26916219AFD0052E5E4 /* numbers-1@2x.png in Resources */,
 				6D1DA26A16219AFD0052E5E4 /* numbers-2@2x.png in Resources */,
 				6098F77B1621F05E001D8136 /* QuizController.xib in Resources */,
+				6098F7831621F967001D8136 /* QuizScoreScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -939,6 +948,7 @@
 				6098F76B16217F35001D8136 /* FoodMashScoreScreen.m in Sources */,
 				6098F77A1621F05E001D8136 /* QuizController.m in Sources */,
 				6098F77E1621F1DA001D8136 /* QuizObject.m in Sources */,
+				6098F7821621F967001D8136 /* QuizScoreScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

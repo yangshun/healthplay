@@ -8,10 +8,14 @@
 
 #import "QuizController.h"
 #import "QuizObject.h"
+#import "QuizScoreScreen.h"
 
 @interface QuizController ()
 
 @property (nonatomic, strong) NSMutableArray *questions;
+@property (nonatomic, strong) NSMutableArray *buttons;
+@property (nonatomic) int currentQuestion;
+@property (nonatomic) int score;
 @end
 
 @implementation QuizController
@@ -30,6 +34,8 @@
     self = [self init];
     if (self) {
         self.questions = [NSMutableArray array];
+        self.currentQuestion = 0;
+        self.score = 0;
         
         NSArray *questions = [JSON objectForKey:@"questions"];
         NSArray *choiceA = [JSON objectForKey:@"choicea"];
@@ -57,13 +63,46 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.buttons = [NSMutableArray arrayWithObjects:self.buttonOne, self.buttonTwo, self.buttonThree,nil];
     // Do any additional setup after loading the view from its nib.
+    [self showNextQuestion];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) showNextQuestion {
+    
+    if (self.currentQuestion >= self.questions.count) {
+        QuizScoreScreen *scoreScreen = [[QuizScoreScreen alloc] initWithScore:self.score];
+        [self.navigationController pushViewController:scoreScreen animated:YES];
+        return;
+    }
+    
+    QuizObject *object = [self.questions objectAtIndex:self.currentQuestion];
+    
+    self.questionLabel.text = object.question;
+    
+    for (int i=0;i<3;i++) {
+        UIButton *button = [self.buttons objectAtIndex:i];
+        NSString *answer = [object.answers objectAtIndex:i];
+        [button setTitle:answer forState:UIControlStateNormal];
+    }
+}
+
+- (IBAction)selectedAnswer:(UIButton *)sender
+{
+    QuizObject *quiz = [self.questions objectAtIndex:self.currentQuestion];
+    if (sender.tag == quiz.answer) {
+        self.score++;
+        self.scoreLabel.text = [NSString stringWithFormat:@"%i", self.score];
+    }
+    
+    self.currentQuestion++;
+    [self showNextQuestion];
 }
 
 @end
