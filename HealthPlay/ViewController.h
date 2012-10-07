@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ProfileViewController.h"
 #import "ActivityViewController.h"
-#import "PreGameViewController.h"
+#import "GameViewController.h"
 
 @interface ViewController : UIViewController {
   CGFloat curYLoc;

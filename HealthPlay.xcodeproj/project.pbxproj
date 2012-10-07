@@ -88,6 +88,8 @@
 		6D1DA28116220B460052E5E4 /* activity-foodquiz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA28016220B460052E5E4 /* activity-foodquiz@2x.png */; };
 		6D1DA28316220B950052E5E4 /* label-foodquiz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA28216220B950052E5E4 /* label-foodquiz@2x.png */; };
 		6D1DA28516220FBA0052E5E4 /* button-plain@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA28416220FBA0052E5E4 /* button-plain@2x.png */; };
+		6DC121B316222E5E006CD3DD /* shopscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC121B216222E5E006CD3DD /* shopscreen@2x.png */; };
+		6DC121B616222FA3006CD3DD /* button-up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC121B516222FA3006CD3DD /* button-up@2x.png */; };
 		6DD8EED81620B93E006A1F13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD8EED71620B93E006A1F13 /* UIKit.framework */; };
 		6DD8EEDA1620B93E006A1F13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD8EED91620B93E006A1F13 /* Foundation.framework */; };
 		6DD8EEDC1620B93E006A1F13 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD8EEDB1620B93E006A1F13 /* CoreGraphics.framework */; };
@@ -270,6 +272,8 @@
 		6D1DA28016220B460052E5E4 /* activity-foodquiz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "activity-foodquiz@2x.png"; sourceTree = "<group>"; };
 		6D1DA28216220B950052E5E4 /* label-foodquiz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "label-foodquiz@2x.png"; sourceTree = "<group>"; };
 		6D1DA28416220FBA0052E5E4 /* button-plain@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-plain@2x.png"; sourceTree = "<group>"; };
+		6DC121B216222E5E006CD3DD /* shopscreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shopscreen@2x.png"; sourceTree = "<group>"; };
+		6DC121B516222FA3006CD3DD /* button-up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-up@2x.png"; sourceTree = "<group>"; };
 		6DD8EED31620B93E006A1F13 /* HealthPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD8EED71620B93E006A1F13 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6DD8EED91620B93E006A1F13 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -764,6 +768,7 @@
 				6D1DA212162112400052E5E4 /* button-back@2x.png */,
 				6D1DA20A162110440052E5E4 /* boy-1@2x.png */,
 				6D1DA20B162110440052E5E4 /* boy-2@2x.png */,
+				6DC121B516222FA3006CD3DD /* button-up@2x.png */,
 				6D1DA20C162110440052E5E4 /* girl-1@2x.png */,
 				6D1DA20D162110440052E5E4 /* girl-2@2x.png */,
 				6D1DA23C16213AE90052E5E4 /* rank-maj@2x.png */,
@@ -789,6 +794,7 @@
 				6D1DA2701621F99A0052E5E4 /* thumbnail-2@2x.png */,
 				6D1DA2711621F99A0052E5E4 /* thumbnail-3@2x.png */,
 				6D1DA2721621F99B0052E5E4 /* thumbnail-4@2x.png */,
+				6DC121B216222E5E006CD3DD /* shopscreen@2x.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -908,6 +914,8 @@
 				6D1DA28116220B460052E5E4 /* activity-foodquiz@2x.png in Resources */,
 				6D1DA28316220B950052E5E4 /* label-foodquiz@2x.png in Resources */,
 				6D1DA28516220FBA0052E5E4 /* button-plain@2x.png in Resources */,
+				6DC121B316222E5E006CD3DD /* shopscreen@2x.png in Resources */,
+				6DC121B616222FA3006CD3DD /* button-up@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

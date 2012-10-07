@@ -161,8 +161,8 @@
 }
 
 - (IBAction)pushPreGame:(id)sender {
-    PreGameViewController *pregamevc = [[PreGameViewController alloc] init];
-    [self.navigationController pushViewController:pregamevc animated:YES];
+  GameViewController *gamevc = [[GameViewController alloc] init];
+  [self.navigationController pushViewController:gamevc animated:YES];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

@@ -8,7 +8,11 @@
 
 #import "GameViewController.h"
 
-@interface GameViewController ()
+@interface GameViewController () {
+  IBOutlet UILabel *heartQty;
+  IBOutlet UILabel *potionQty;
+  IBOutlet UILabel *score;
+}
 
 @end
 
@@ -34,6 +38,18 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+- (IBAction)back:(id)sender {
+  [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)increaseHearts:(id)sender {
+  
+}
+
+- (IBAction)increasePotions:(id)sender {
+  
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
