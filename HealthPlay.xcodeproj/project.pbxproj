@@ -32,7 +32,11 @@
 		603DAE271620EED5004B1D81 /* ProductDescriptionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603DAE251620EED5004B1D81 /* ProductDescriptionController.m */; };
 		603DAE281620EED5004B1D81 /* ProductDescriptionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603DAE261620EED5004B1D81 /* ProductDescriptionController.xib */; };
 		603DAE301620EF9A004B1D81 /* FoodRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 603DAE2F1620EF9A004B1D81 /* FoodRate.m */; };
-
+		608F09D216210BAC00FE1CB3 /* FoodMash.m in Sources */ = {isa = PBXBuildFile; fileRef = 608F09CC16210BAC00FE1CB3 /* FoodMash.m */; };
+		608F09D316210BAC00FE1CB3 /* FoodMashController.m in Sources */ = {isa = PBXBuildFile; fileRef = 608F09CE16210BAC00FE1CB3 /* FoodMashController.m */; };
+		608F09D416210BAC00FE1CB3 /* FoodMashController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 608F09CF16210BAC00FE1CB3 /* FoodMashController.xib */; };
+		608F09D516210BAC00FE1CB3 /* FoodPair.m in Sources */ = {isa = PBXBuildFile; fileRef = 608F09D116210BAC00FE1CB3 /* FoodPair.m */; };
+		608F09DC1621141200FE1CB3 /* FoodProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 608F09DB1621141200FE1CB3 /* FoodProduct.m */; };
 		6D1DA20616210F3F0052E5E4 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA20516210F3F0052E5E4 /* background@2x.png */; };
 		6D1DA2091621103A0052E5E4 /* label-profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA2081621103A0052E5E4 /* label-profile@2x.png */; };
 		6D1DA20E162110440052E5E4 /* boy-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA20A162110440052E5E4 /* boy-1@2x.png */; };
@@ -42,11 +46,15 @@
 		6D1DA213162112400052E5E4 /* button-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA212162112400052E5E4 /* button-back@2x.png */; };
 		6D1DA22216211FF20052E5E4 /* tabcontrols@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA22116211FF20052E5E4 /* tabcontrols@2x.png */; };
 		6D1DA224162121800052E5E4 /* button-logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA223162121800052E5E4 /* button-logout@2x.png */; };
-		608F09D216210BAC00FE1CB3 /* FoodMash.m in Sources */ = {isa = PBXBuildFile; fileRef = 608F09CC16210BAC00FE1CB3 /* FoodMash.m */; };
-		608F09D316210BAC00FE1CB3 /* FoodMashController.m in Sources */ = {isa = PBXBuildFile; fileRef = 608F09CE16210BAC00FE1CB3 /* FoodMashController.m */; };
-		608F09D416210BAC00FE1CB3 /* FoodMashController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 608F09CF16210BAC00FE1CB3 /* FoodMashController.xib */; };
-		608F09D516210BAC00FE1CB3 /* FoodPair.m in Sources */ = {isa = PBXBuildFile; fileRef = 608F09D116210BAC00FE1CB3 /* FoodPair.m */; };
-		608F09DC1621141200FE1CB3 /* FoodProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 608F09DB1621141200FE1CB3 /* FoodProduct.m */; };
+		6D1DA22E162127BD0052E5E4 /* label-badges@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA22D162127BD0052E5E4 /* label-badges@2x.png */; };
+		6D1DA236162134680052E5E4 /* 1-mile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA230162134680052E5E4 /* 1-mile@2x.png */; };
+		6D1DA237162134680052E5E4 /* 5-miles@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA231162134680052E5E4 /* 5-miles@2x.png */; };
+		6D1DA238162134680052E5E4 /* 10-miles@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA232162134680052E5E4 /* 10-miles@2x.png */; };
+		6D1DA239162134680052E5E4 /* quiz-expert@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA233162134680052E5E4 /* quiz-expert@2x.png */; };
+		6D1DA23A162134680052E5E4 /* quiz-guru@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA234162134680052E5E4 /* quiz-guru@2x.png */; };
+		6D1DA23B162134680052E5E4 /* quiz-whiz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA235162134680052E5E4 /* quiz-whiz@2x.png */; };
+		6D1DA23E16213AE90052E5E4 /* rank-maj@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA23C16213AE90052E5E4 /* rank-maj@2x.png */; };
+		6D1DA23F16213AE90052E5E4 /* rank-sgt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA23D16213AE90052E5E4 /* rank-sgt@2x.png */; };
 		6DD8EED81620B93E006A1F13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD8EED71620B93E006A1F13 /* UIKit.framework */; };
 		6DD8EEDA1620B93E006A1F13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD8EED91620B93E006A1F13 /* Foundation.framework */; };
 		6DD8EEDC1620B93E006A1F13 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD8EEDB1620B93E006A1F13 /* CoreGraphics.framework */; };
@@ -163,15 +171,6 @@
 		603DAE2F1620EF9A004B1D81 /* FoodRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodRate.m; sourceTree = "<group>"; };
 		603DAE311620EFFD004B1D81 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		603DAE321620F0C1004B1D81 /* FoodRateDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoodRateDelegate.h; sourceTree = "<group>"; };
-		6D1DA20516210F3F0052E5E4 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
-		6D1DA2081621103A0052E5E4 /* label-profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "label-profile@2x.png"; sourceTree = "<group>"; };
-		6D1DA20A162110440052E5E4 /* boy-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "boy-1@2x.png"; sourceTree = "<group>"; };
-		6D1DA20B162110440052E5E4 /* boy-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "boy-2@2x.png"; sourceTree = "<group>"; };
-		6D1DA20C162110440052E5E4 /* girl-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "girl-1@2x.png"; sourceTree = "<group>"; };
-		6D1DA20D162110440052E5E4 /* girl-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "girl-2@2x.png"; sourceTree = "<group>"; };
-		6D1DA212162112400052E5E4 /* button-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-back@2x.png"; sourceTree = "<group>"; };
-		6D1DA22116211FF20052E5E4 /* tabcontrols@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabcontrols@2x.png"; sourceTree = "<group>"; };
-		6D1DA223162121800052E5E4 /* button-logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-logout@2x.png"; sourceTree = "<group>"; };
 		608F09CB16210BAC00FE1CB3 /* FoodMash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodMash.h; sourceTree = "<group>"; };
 		608F09CC16210BAC00FE1CB3 /* FoodMash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodMash.m; sourceTree = "<group>"; };
 		608F09CD16210BAC00FE1CB3 /* FoodMashController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodMashController.h; sourceTree = "<group>"; };
@@ -181,6 +180,24 @@
 		608F09D116210BAC00FE1CB3 /* FoodPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodPair.m; sourceTree = "<group>"; };
 		608F09DA1621141200FE1CB3 /* FoodProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodProduct.h; sourceTree = "<group>"; };
 		608F09DB1621141200FE1CB3 /* FoodProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodProduct.m; sourceTree = "<group>"; };
+		6D1DA20516210F3F0052E5E4 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
+		6D1DA2081621103A0052E5E4 /* label-profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "label-profile@2x.png"; sourceTree = "<group>"; };
+		6D1DA20A162110440052E5E4 /* boy-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "boy-1@2x.png"; sourceTree = "<group>"; };
+		6D1DA20B162110440052E5E4 /* boy-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "boy-2@2x.png"; sourceTree = "<group>"; };
+		6D1DA20C162110440052E5E4 /* girl-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "girl-1@2x.png"; sourceTree = "<group>"; };
+		6D1DA20D162110440052E5E4 /* girl-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "girl-2@2x.png"; sourceTree = "<group>"; };
+		6D1DA212162112400052E5E4 /* button-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-back@2x.png"; sourceTree = "<group>"; };
+		6D1DA22116211FF20052E5E4 /* tabcontrols@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabcontrols@2x.png"; sourceTree = "<group>"; };
+		6D1DA223162121800052E5E4 /* button-logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-logout@2x.png"; sourceTree = "<group>"; };
+		6D1DA22D162127BD0052E5E4 /* label-badges@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "label-badges@2x.png"; sourceTree = "<group>"; };
+		6D1DA230162134680052E5E4 /* 1-mile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1-mile@2x.png"; sourceTree = "<group>"; };
+		6D1DA231162134680052E5E4 /* 5-miles@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5-miles@2x.png"; sourceTree = "<group>"; };
+		6D1DA232162134680052E5E4 /* 10-miles@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10-miles@2x.png"; sourceTree = "<group>"; };
+		6D1DA233162134680052E5E4 /* quiz-expert@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "quiz-expert@2x.png"; sourceTree = "<group>"; };
+		6D1DA234162134680052E5E4 /* quiz-guru@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "quiz-guru@2x.png"; sourceTree = "<group>"; };
+		6D1DA235162134680052E5E4 /* quiz-whiz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "quiz-whiz@2x.png"; sourceTree = "<group>"; };
+		6D1DA23C16213AE90052E5E4 /* rank-maj@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rank-maj@2x.png"; sourceTree = "<group>"; };
+		6D1DA23D16213AE90052E5E4 /* rank-sgt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rank-sgt@2x.png"; sourceTree = "<group>"; };
 		6DD8EED31620B93E006A1F13 /* HealthPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD8EED71620B93E006A1F13 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6DD8EED91620B93E006A1F13 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -634,6 +651,12 @@
 		6DD8EFB2162104B7006A1F13 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				6D1DA230162134680052E5E4 /* 1-mile@2x.png */,
+				6D1DA231162134680052E5E4 /* 5-miles@2x.png */,
+				6D1DA232162134680052E5E4 /* 10-miles@2x.png */,
+				6D1DA233162134680052E5E4 /* quiz-expert@2x.png */,
+				6D1DA234162134680052E5E4 /* quiz-guru@2x.png */,
+				6D1DA235162134680052E5E4 /* quiz-whiz@2x.png */,
 				6D1DA223162121800052E5E4 /* button-logout@2x.png */,
 				6D1DA22116211FF20052E5E4 /* tabcontrols@2x.png */,
 				6D1DA212162112400052E5E4 /* button-back@2x.png */,
@@ -641,6 +664,9 @@
 				6D1DA20B162110440052E5E4 /* boy-2@2x.png */,
 				6D1DA20C162110440052E5E4 /* girl-1@2x.png */,
 				6D1DA20D162110440052E5E4 /* girl-2@2x.png */,
+				6D1DA23C16213AE90052E5E4 /* rank-maj@2x.png */,
+				6D1DA23D16213AE90052E5E4 /* rank-sgt@2x.png */,
+				6D1DA22D162127BD0052E5E4 /* label-badges@2x.png */,
 				6D1DA2081621103A0052E5E4 /* label-profile@2x.png */,
 				6D1DA20516210F3F0052E5E4 /* background@2x.png */,
 				6DD8EFAF162104AB006A1F13 /* loginscreen@2x.png */,
@@ -727,6 +753,15 @@
 				6D1DA22216211FF20052E5E4 /* tabcontrols@2x.png in Resources */,
 				6D1DA224162121800052E5E4 /* button-logout@2x.png in Resources */,
 				608F09D416210BAC00FE1CB3 /* FoodMashController.xib in Resources */,
+				6D1DA22E162127BD0052E5E4 /* label-badges@2x.png in Resources */,
+				6D1DA236162134680052E5E4 /* 1-mile@2x.png in Resources */,
+				6D1DA237162134680052E5E4 /* 5-miles@2x.png in Resources */,
+				6D1DA238162134680052E5E4 /* 10-miles@2x.png in Resources */,
+				6D1DA239162134680052E5E4 /* quiz-expert@2x.png in Resources */,
+				6D1DA23A162134680052E5E4 /* quiz-guru@2x.png in Resources */,
+				6D1DA23B162134680052E5E4 /* quiz-whiz@2x.png in Resources */,
+				6D1DA23E16213AE90052E5E4 /* rank-maj@2x.png in Resources */,
+				6D1DA23F16213AE90052E5E4 /* rank-sgt@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -867,7 +902,7 @@
 		6DD8EEF21620B93E006A1F13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Soedarsono - (PC89633G85)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HealthPlay/HealthPlay-Prefix.pch";
 				INFOPLIST_FILE = "HealthPlay/HealthPlay-Info.plist";
@@ -876,7 +911,7 @@
 					"\"$(SRCROOT)/HealthPlay/ZBarSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E20AB67E-98FE-4B3C-AD96-7E81F335E33B";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
@@ -885,7 +920,7 @@
 		6DD8EEF31620B93E006A1F13 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Soedarsono - (PC89633G85)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HealthPlay/HealthPlay-Prefix.pch";
 				INFOPLIST_FILE = "HealthPlay/HealthPlay-Info.plist";
@@ -894,7 +929,7 @@
 					"\"$(SRCROOT)/HealthPlay/ZBarSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E20AB67E-98FE-4B3C-AD96-7E81F335E33B";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
