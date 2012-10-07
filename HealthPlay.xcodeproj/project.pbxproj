@@ -76,6 +76,10 @@
 		6D1DA266162198370052E5E4 /* mash-yogurt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA260162198370052E5E4 /* mash-yogurt@2x.png */; };
 		6D1DA26916219AFD0052E5E4 /* numbers-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA26716219AFC0052E5E4 /* numbers-1@2x.png */; };
 		6D1DA26A16219AFD0052E5E4 /* numbers-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA26816219AFD0052E5E4 /* numbers-2@2x.png */; };
+		6D1DA2731621F99B0052E5E4 /* thumbnail-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA26F1621F99A0052E5E4 /* thumbnail-1@2x.png */; };
+		6D1DA2741621F99B0052E5E4 /* thumbnail-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA2701621F99A0052E5E4 /* thumbnail-2@2x.png */; };
+		6D1DA2751621F99B0052E5E4 /* thumbnail-3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA2711621F99A0052E5E4 /* thumbnail-3@2x.png */; };
+		6D1DA2761621F99B0052E5E4 /* thumbnail-4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA2721621F99B0052E5E4 /* thumbnail-4@2x.png */; };
 		6DD8EED81620B93E006A1F13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD8EED71620B93E006A1F13 /* UIKit.framework */; };
 		6DD8EEDA1620B93E006A1F13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD8EED91620B93E006A1F13 /* Foundation.framework */; };
 		6DD8EEDC1620B93E006A1F13 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD8EEDB1620B93E006A1F13 /* CoreGraphics.framework */; };
@@ -243,6 +247,10 @@
 		6D1DA260162198370052E5E4 /* mash-yogurt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mash-yogurt@2x.png"; sourceTree = "<group>"; };
 		6D1DA26716219AFC0052E5E4 /* numbers-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "numbers-1@2x.png"; sourceTree = "<group>"; };
 		6D1DA26816219AFD0052E5E4 /* numbers-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "numbers-2@2x.png"; sourceTree = "<group>"; };
+		6D1DA26F1621F99A0052E5E4 /* thumbnail-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail-1@2x.png"; sourceTree = "<group>"; };
+		6D1DA2701621F99A0052E5E4 /* thumbnail-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail-2@2x.png"; sourceTree = "<group>"; };
+		6D1DA2711621F99A0052E5E4 /* thumbnail-3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail-3@2x.png"; sourceTree = "<group>"; };
+		6D1DA2721621F99B0052E5E4 /* thumbnail-4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail-4@2x.png"; sourceTree = "<group>"; };
 		6DD8EED31620B93E006A1F13 /* HealthPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD8EED71620B93E006A1F13 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6DD8EED91620B93E006A1F13 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -739,6 +747,10 @@
 				6D1DA2081621103A0052E5E4 /* label-profile@2x.png */,
 				6D1DA20516210F3F0052E5E4 /* background@2x.png */,
 				6DD8EFAF162104AB006A1F13 /* loginscreen@2x.png */,
+				6D1DA26F1621F99A0052E5E4 /* thumbnail-1@2x.png */,
+				6D1DA2701621F99A0052E5E4 /* thumbnail-2@2x.png */,
+				6D1DA2711621F99A0052E5E4 /* thumbnail-3@2x.png */,
+				6D1DA2721621F99B0052E5E4 /* thumbnail-4@2x.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -849,6 +861,10 @@
 				6D1DA266162198370052E5E4 /* mash-yogurt@2x.png in Resources */,
 				6D1DA26916219AFD0052E5E4 /* numbers-1@2x.png in Resources */,
 				6D1DA26A16219AFD0052E5E4 /* numbers-2@2x.png in Resources */,
+				6D1DA2731621F99B0052E5E4 /* thumbnail-1@2x.png in Resources */,
+				6D1DA2741621F99B0052E5E4 /* thumbnail-2@2x.png in Resources */,
+				6D1DA2751621F99B0052E5E4 /* thumbnail-3@2x.png in Resources */,
+				6D1DA2761621F99B0052E5E4 /* thumbnail-4@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
