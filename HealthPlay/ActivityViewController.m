@@ -9,6 +9,9 @@
 #import "ActivityViewController.h"
 #import "FoodMashCategoriesController.h"
 #import "ProductDescriptionController.h"
+#import "QuizController.h"
+#import "MBProgressHUD.h"
+#import "AFNetworking.h"
 
 @interface ActivityViewController ()
 @property (nonatomic, strong) FoodRate *foodRate;
@@ -55,9 +58,39 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 
+- (IBAction)startQuiz:(id)sender
+{
+    NSURL *url = [NSURL URLWithString:@"http://giftsy.co/healthplay/getquestion.php"];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    
+    AFJSONRequestOperation *jsonRequest = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        [self hideLoadingHUD];
+        QuizController *controller = [[QuizController alloc] initWithJSON:JSON];
+        [self.navigationController pushViewController:controller animated:YES];
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"%@", [error localizedDescription]);
+        [self hideLoadingHUD];
+    }];
+    
+    [self showLoadingHUD];
+    [jsonRequest start];
+}
+
 - (IBAction)backButtonPressed:(id)sender
 {
   [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void) showLoadingHUD
+{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+}
+
+- (void) hideLoadingHUD
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    });
 }
 
 #pragma mark FoodRate delegate

@@ -42,6 +42,9 @@
 		6098F75716213DC8001D8136 /* FoodMashCategoriesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6098F75416213DC8001D8136 /* FoodMashCategoriesController.xib */; };
 		6098F76B16217F35001D8136 /* FoodMashScoreScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 6098F76916217F34001D8136 /* FoodMashScoreScreen.m */; };
 		6098F76C16217F35001D8136 /* FoodMashScoreScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6098F76A16217F35001D8136 /* FoodMashScoreScreen.xib */; };
+		6098F77A1621F05E001D8136 /* QuizController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6098F7781621F05E001D8136 /* QuizController.m */; };
+		6098F77B1621F05E001D8136 /* QuizController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6098F7791621F05E001D8136 /* QuizController.xib */; };
+		6098F77E1621F1DA001D8136 /* QuizObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6098F77D1621F1DA001D8136 /* QuizObject.m */; };
 		6D1DA20616210F3F0052E5E4 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA20516210F3F0052E5E4 /* background@2x.png */; };
 		6D1DA2091621103A0052E5E4 /* label-profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA2081621103A0052E5E4 /* label-profile@2x.png */; };
 		6D1DA20E162110440052E5E4 /* boy-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA20A162110440052E5E4 /* boy-1@2x.png */; };
@@ -208,6 +211,11 @@
 		6098F76816217F34001D8136 /* FoodMashScoreScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodMashScoreScreen.h; sourceTree = "<group>"; };
 		6098F76916217F34001D8136 /* FoodMashScoreScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodMashScoreScreen.m; sourceTree = "<group>"; };
 		6098F76A16217F35001D8136 /* FoodMashScoreScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodMashScoreScreen.xib; sourceTree = "<group>"; };
+		6098F7771621F05E001D8136 /* QuizController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizController.h; sourceTree = "<group>"; };
+		6098F7781621F05E001D8136 /* QuizController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizController.m; sourceTree = "<group>"; };
+		6098F7791621F05E001D8136 /* QuizController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizController.xib; sourceTree = "<group>"; };
+		6098F77C1621F1DA001D8136 /* QuizObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizObject.h; sourceTree = "<group>"; };
+		6098F77D1621F1DA001D8136 /* QuizObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizObject.m; sourceTree = "<group>"; };
 		6D1DA20516210F3F0052E5E4 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		6D1DA2081621103A0052E5E4 /* label-profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "label-profile@2x.png"; sourceTree = "<group>"; };
 		6D1DA20A162110440052E5E4 /* boy-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "boy-1@2x.png"; sourceTree = "<group>"; };
@@ -466,6 +474,7 @@
 		603DAE2D1620EF4F004B1D81 /* Activites */ = {
 			isa = PBXGroup;
 			children = (
+				6098F7761621EFF2001D8136 /* Quiz */,
 				6DD8EF021620BB20006A1F13 /* ActivityViewController.h */,
 				6DD8EF031620BB20006A1F13 /* ActivityViewController.m */,
 				6DD8EF041620BB20006A1F13 /* ActivityViewController.xib */,
@@ -509,6 +518,18 @@
 				603DAE321620F0C1004B1D81 /* FoodRateDelegate.h */,
 			);
 			name = FoodRate;
+			sourceTree = "<group>";
+		};
+		6098F7761621EFF2001D8136 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				6098F7771621F05E001D8136 /* QuizController.h */,
+				6098F7781621F05E001D8136 /* QuizController.m */,
+				6098F7791621F05E001D8136 /* QuizController.xib */,
+				6098F77C1621F1DA001D8136 /* QuizObject.h */,
+				6098F77D1621F1DA001D8136 /* QuizObject.m */,
+			);
+			name = Quiz;
 			sourceTree = "<group>";
 		};
 		6DD8EEC81620B93E006A1F13 = {
@@ -849,6 +870,7 @@
 				6D1DA266162198370052E5E4 /* mash-yogurt@2x.png in Resources */,
 				6D1DA26916219AFD0052E5E4 /* numbers-1@2x.png in Resources */,
 				6D1DA26A16219AFD0052E5E4 /* numbers-2@2x.png in Resources */,
+				6098F77B1621F05E001D8136 /* QuizController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -915,6 +937,8 @@
 				608F09DC1621141200FE1CB3 /* FoodProduct.m in Sources */,
 				6098F75616213DC8001D8136 /* FoodMashCategoriesController.m in Sources */,
 				6098F76B16217F35001D8136 /* FoodMashScoreScreen.m in Sources */,
+				6098F77A1621F05E001D8136 /* QuizController.m in Sources */,
+				6098F77E1621F1DA001D8136 /* QuizObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -992,7 +1016,7 @@
 		6DD8EEF21620B93E006A1F13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Soedarsono - (PC89633G85)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HealthPlay/HealthPlay-Prefix.pch";
 				INFOPLIST_FILE = "HealthPlay/HealthPlay-Info.plist";
@@ -1001,7 +1025,7 @@
 					"\"$(SRCROOT)/HealthPlay/ZBarSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "E20AB67E-98FE-4B3C-AD96-7E81F335E33B";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1010,7 +1034,7 @@
 		6DD8EEF31620B93E006A1F13 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Soedarsono - (PC89633G85)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HealthPlay/HealthPlay-Prefix.pch";
 				INFOPLIST_FILE = "HealthPlay/HealthPlay-Info.plist";
@@ -1019,7 +1043,7 @@
 					"\"$(SRCROOT)/HealthPlay/ZBarSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "E20AB67E-98FE-4B3C-AD96-7E81F335E33B";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
