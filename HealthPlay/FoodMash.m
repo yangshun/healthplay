@@ -12,7 +12,7 @@
 #import "AFNetworking.h"
 #import "FoodPair.h"
 
-#define MAX_COUNT           40
+#define MAX_COUNT           20
 
 @implementation FoodMash
 

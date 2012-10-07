@@ -17,4 +17,6 @@
 @property (nonatomic, weak) IBOutlet UIButton *categoryFive;
 @property (nonatomic, weak) IBOutlet UIButton *categorySix;
 
+- (IBAction)categorySelected:(UIButton*)sender;
+
 @end

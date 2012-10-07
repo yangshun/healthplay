@@ -14,9 +14,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface FoodMashController ()
-@property (nonatomic) int currentPair;
-@property (nonatomic) int score;
-@property (nonatomic, strong) NSArray *pairs;
+
 @end
 
 @implementation FoodMashController
@@ -28,7 +26,6 @@
         // Custom initialization
         self.currentPair = 0;
         self.score = 0;
-        self.searchString = @"bars";
     }
     return self;
 }
@@ -38,17 +35,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [self showLoadingHUD];
-    [FoodMash loadDataWithSearchTerm:self.searchString completion:^(NSArray *pairs) {
-        [self hideLoadingHUD];
-        
-        if (pairs == nil) {
-            // something went wrong
-            return;
-        }
-        self.pairs = pairs;
-        [self showPairs:self.currentPair];
-    }];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,7 +44,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) showPairs:(int)pairId
+- (void) showPair:(int)pairId
 {
     float width = self.firstLabel.frame.size.width;
     
@@ -85,17 +72,7 @@
     self.secondLabel.frame = CGRectMake(rect.origin.x, rect.origin.y, width, rect.size.height);
 }
 
-- (void) showLoadingHUD
-{
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-}
 
-- (void) hideLoadingHUD
-{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-    });
-}
 
 - (void) nextRound {
     self.currentPair++;
@@ -104,7 +81,7 @@
         self.secondButton.hidden = YES;
         return;
     }
-    [self showPairs:self.currentPair];
+    [self showPair:self.currentPair];
 }
 
 - (IBAction)firstButtonSelected:(id)sender {

@@ -20,7 +20,11 @@
 
 @property (nonatomic, strong) NSString *searchString;
 
+@property (nonatomic) int currentPair;
+@property (nonatomic) int score;
+@property (nonatomic, strong) NSArray *pairs;
 
+- (void) showPair:(int)pairId;
 - (IBAction)firstButtonSelected:(id)sender;
 - (IBAction)secondButtonSelected:(id)sender;
 

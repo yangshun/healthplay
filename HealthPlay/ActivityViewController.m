@@ -7,7 +7,7 @@
 //
 
 #import "ActivityViewController.h"
-#import "FoodMashController.h"
+#import "FoodMashCategoriesController.h"
 #import "ProductDescriptionController.h"
 
 @interface ActivityViewController ()
@@ -51,7 +51,7 @@
 
 - (IBAction)startFoodMash:(id)sender
 {
-    FoodMashController *controller = [[FoodMashController alloc] init];
+    FoodMashCategoriesController *controller = [[FoodMashCategoriesController alloc] init];
     [self presentViewController:controller animated:YES completion:nil];
 }
 
