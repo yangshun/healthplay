@@ -10,6 +10,7 @@
 
 @interface FoodMashScoreScreen ()
 @property (nonatomic) int score;
+@property (nonatomic) NSString *category;
 @end
 
 @implementation FoodMashScoreScreen
@@ -23,11 +24,12 @@
     return self;
 }
 
-- (id)initWithScore:(int)score
+- (id)initWithScore:(int)score andCategory:(NSString *)category
 {
     self = [self init];
     if (self) {
         self.score = score;
+        self.category = category;
     }
     return self;
 }
@@ -38,6 +40,8 @@
     // Do any additional setup after loading the view from its nib.
     
     self.scoreLabel.text = [NSString stringWithFormat:@"%i", self.score];
+    
+    NSLog(@"Category: %@", self.category);
 }
 
 - (void)didReceiveMemoryWarning

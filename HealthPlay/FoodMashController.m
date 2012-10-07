@@ -73,7 +73,7 @@
 - (void) nextRound {
     self.currentPair++;
     if (self.currentPair >= FOODMASH_ROUNDS) {
-        FoodMashScoreScreen *scoreScreen = [[FoodMashScoreScreen alloc] initWithScore:self.score];
+        FoodMashScoreScreen *scoreScreen = [[FoodMashScoreScreen alloc] initWithScore:self.score andCategory:self.searchTerm];
         if (self.navigationController == nil) {
             NSLog(@"nil");
         } else {
