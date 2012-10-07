@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>searchTerm</key>
+		<string>gum</string>
+		<key>displayName</key>
+		<string>Gum</string>
+	</dict>
+	<dict>
+		<key>searchTerm</key>
+		<string>pizza</string>
+		<key>displayName</key>
+		<string>Pizzas</string>
+	</dict>
+	<dict>
+		<key>searchTerm</key>
+		<string>chocolate</string>
+		<key>displayName</key>
+		<string>Chocolates</string>
+	</dict>
+	<dict>
+		<key>searchTerm</key>
+		<string>cookie</string>
+		<key>displayName</key>
+		<string>Cookies</string>
+	</dict>
+	<dict>
+		<key>searchTerm</key>
+		<string>chips</string>
+		<key>displayName</key>
+		<string>Chips</string>
+	</dict>
+	<dict>
+		<key>searchTerm</key>
+		<string>noodle</string>
+		<key>displayName</key>
+		<string>Noodles</string>
+	</dict>
+	<dict>
+		<key>searchTerm</key>
+		<string>yogurt</string>
+		<key>displayName</key>
+		<string>Yogurts</string>
+	</dict>
+</array>
+</plist>

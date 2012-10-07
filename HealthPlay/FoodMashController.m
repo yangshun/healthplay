@@ -28,6 +28,7 @@
         // Custom initialization
         self.currentPair = 0;
         self.score = 0;
+        self.searchString = @"bars";
     }
     return self;
 }
@@ -38,7 +39,7 @@
     // Do any additional setup after loading the view from its nib.
     
     [self showLoadingHUD];
-    [FoodMash loadDataWithSearchTerm:@"bars" completion:^(NSArray *pairs) {
+    [FoodMash loadDataWithSearchTerm:self.searchString completion:^(NSArray *pairs) {
         [self hideLoadingHUD];
         
         if (pairs == nil) {

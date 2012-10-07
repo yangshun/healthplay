@@ -18,6 +18,8 @@
 @property (nonatomic, weak) IBOutlet UILabel *scoreLabel;
 @property (nonatomic, weak) IBOutlet UILabel *pairLabel;
 
+@property (nonatomic, strong) NSString *searchString;
+
 
 - (IBAction)firstButtonSelected:(id)sender;
 - (IBAction)secondButtonSelected:(id)sender;
