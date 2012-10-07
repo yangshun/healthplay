@@ -4,9 +4,9 @@
 <array>
 	<dict>
 		<key>searchTerm</key>
-		<string>gum</string>
+		<string>yogurt</string>
 		<key>displayName</key>
-		<string>Gum</string>
+		<string>Yogurts</string>
 	</dict>
 	<dict>
 		<key>searchTerm</key>
@@ -37,12 +37,6 @@
 		<string>noodle</string>
 		<key>displayName</key>
 		<string>Noodles</string>
-	</dict>
-	<dict>
-		<key>searchTerm</key>
-		<string>yogurt</string>
-		<key>displayName</key>
-		<string>Yogurts</string>
 	</dict>
 </array>
 </plist>

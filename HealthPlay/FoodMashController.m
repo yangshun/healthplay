@@ -7,6 +7,7 @@
 //
 
 #import "FoodMash.h"
+#import "FoodMashScoreScreen.h"
 #import "FoodMashController.h"
 #import "MBProgressHUD.h"
 #import "FoodPair.h"
@@ -35,7 +36,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,15 +49,12 @@
 {
     float width = self.firstLabel.frame.size.width;
     
-    self.pairLabel.text = [NSString stringWithFormat:@"%i", pairId+1];
-    
-    
     FoodPair *pair = [self.pairs objectAtIndex:pairId];
+    
     [self.firstButton setImage:pair.firstProduct.image forState:UIControlStateNormal];
     [self.firstButton setImage:pair.firstProduct.image forState:UIControlStateHighlighted];
     self.firstButton.layer.borderWidth = 0;
     [self.firstLabel setText:pair.firstProduct.name];
-    
     
     [self.secondButton setImage:pair.secondProduct.image forState:UIControlStateNormal];
     [self.secondButton setImage:pair.secondProduct.image forState:UIControlStateHighlighted];
@@ -72,14 +70,17 @@
     self.secondLabel.frame = CGRectMake(rect.origin.x, rect.origin.y, width, rect.size.height);
 }
 
-
-
 - (void) nextRound {
     self.currentPair++;
     if (self.currentPair >= FOODMASH_ROUNDS) {
-        self.firstButton.hidden = YES;
-        self.secondButton.hidden = YES;
-        return;
+        FoodMashScoreScreen *scoreScreen = [[FoodMashScoreScreen alloc] initWithScore:self.score];
+        if (self.navigationController == nil) {
+            NSLog(@"nil");
+        } else {
+            NSLog(@"not nil");
+        }
+        [self.navigationController pushViewController:scoreScreen animated:YES];
+         return;
     }
     [self showPair:self.currentPair];
 }

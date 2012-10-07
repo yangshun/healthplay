@@ -46,13 +46,13 @@
 - (IBAction)startFoodRate:(id)sender
 {
     self.foodRate = [[FoodRate alloc] initWithDelegate:self];
-    [self presentViewController:self.foodRate.zbarController animated:YES completion:nil];
+    [self.navigationController pushViewController:self.foodRate.zbarController animated:YES];
 }
 
 - (IBAction)startFoodMash:(id)sender
 {
     FoodMashCategoriesController *controller = [[FoodMashCategoriesController alloc] init];
-    [self presentViewController:controller animated:YES completion:nil];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 #pragma mark FoodRate delegate
@@ -61,7 +61,7 @@
     ProductDescriptionController *productController = [[ProductDescriptionController alloc] initWithRequest:urlRequest];
     
     [self.foodRate.zbarController dismissViewControllerAnimated:YES completion:^{
-        [self presentViewController:productController animated:YES completion:nil];
+        [self.navigationController pushViewController:productController animated:YES];
     }];
 }
 

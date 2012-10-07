@@ -75,7 +75,7 @@
             // something went wrong
             return;
         }
-        [self presentViewController:controller animated:YES completion:nil];
+        [self.navigationController pushViewController:controller animated:YES];
         controller.pairs = pairs;
         
         [controller showPair:0];

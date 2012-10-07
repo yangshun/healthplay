@@ -14,9 +14,9 @@
 @property (nonatomic, weak) IBOutlet UILabel *firstLabel;
 @property (nonatomic, weak) IBOutlet UIButton *secondButton;
 @property (nonatomic, weak) IBOutlet UILabel *secondLabel;
+@property (nonatomic, weak) IBOutlet UIView *scoreView;
 
 @property (nonatomic, weak) IBOutlet UILabel *scoreLabel;
-@property (nonatomic, weak) IBOutlet UILabel *pairLabel;
 
 @property (nonatomic, strong) NSString *searchString;
 

@@ -11,7 +11,7 @@
 
 @interface ProfileViewController () {
   IBOutlet UILabel *nameLabel;
-  IBOutlet UIScrollView *scrollView;
+  IBOutlet UIScrollView *_scrollView;
   UIImage *boy1;
   UIImage *boy2;
   UIImage *girl1;
@@ -47,13 +47,13 @@
   for (UIImage *img in avatarImages) {
     UIImageView *imgView = [[UIImageView alloc] initWithImage:img];
     [avatarImageViews addObject:imgView];
-    [scrollView addSubview:imgView];
+    [_scrollView addSubview:imgView];
     imgView.frame = CGRectMake(curXLoc, 0, 106, 200);
     curXLoc += 106;
   }
-  scrollView.delegate = self;
-  scrollView.pagingEnabled = YES;
-  scrollView.contentSize = CGSizeMake(curXLoc, 200);
+  _scrollView.delegate = self;
+  _scrollView.pagingEnabled = YES;
+  _scrollView.contentSize = CGSizeMake(curXLoc, 200);
   // Do any additional setup after loading the view from its nib.
 }
 
