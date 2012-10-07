@@ -40,6 +40,8 @@
 		6098F75516213DC8001D8136 /* FoodMashCategories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6098F75116213DC8001D8136 /* FoodMashCategories.plist */; };
 		6098F75616213DC8001D8136 /* FoodMashCategoriesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6098F75316213DC8001D8136 /* FoodMashCategoriesController.m */; };
 		6098F75716213DC8001D8136 /* FoodMashCategoriesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6098F75416213DC8001D8136 /* FoodMashCategoriesController.xib */; };
+		6098F76B16217F35001D8136 /* FoodMashScoreScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 6098F76916217F34001D8136 /* FoodMashScoreScreen.m */; };
+		6098F76C16217F35001D8136 /* FoodMashScoreScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6098F76A16217F35001D8136 /* FoodMashScoreScreen.xib */; };
 		6D1DA20616210F3F0052E5E4 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA20516210F3F0052E5E4 /* background@2x.png */; };
 		6D1DA2091621103A0052E5E4 /* label-profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA2081621103A0052E5E4 /* label-profile@2x.png */; };
 		6D1DA20E162110440052E5E4 /* boy-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA20A162110440052E5E4 /* boy-1@2x.png */; };
@@ -65,6 +67,7 @@
 		6D1DA24F16215FB80052E5E4 /* label-foodmash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA24D16215FB80052E5E4 /* label-foodmash@2x.png */; };
 		6D1DA25016215FB80052E5E4 /* label-foodrate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA24E16215FB80052E5E4 /* label-foodrate@2x.png */; };
 		6D1DA252162164820052E5E4 /* button-submit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1DA251162164820052E5E4 /* button-submit@2x.png */; };
+		6D1DA25A1621885C0052E5E4 /* Mash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1DA2581621880F0052E5E4 /* Mash.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6DD8EED81620B93E006A1F13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD8EED71620B93E006A1F13 /* UIKit.framework */; };
 		6DD8EEDA1620B93E006A1F13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD8EED91620B93E006A1F13 /* Foundation.framework */; };
 		6DD8EEDC1620B93E006A1F13 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD8EEDB1620B93E006A1F13 /* CoreGraphics.framework */; };
@@ -194,6 +197,9 @@
 		6098F75216213DC8001D8136 /* FoodMashCategoriesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodMashCategoriesController.h; sourceTree = "<group>"; };
 		6098F75316213DC8001D8136 /* FoodMashCategoriesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodMashCategoriesController.m; sourceTree = "<group>"; };
 		6098F75416213DC8001D8136 /* FoodMashCategoriesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodMashCategoriesController.xib; sourceTree = "<group>"; };
+		6098F76816217F34001D8136 /* FoodMashScoreScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodMashScoreScreen.h; sourceTree = "<group>"; };
+		6098F76916217F34001D8136 /* FoodMashScoreScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodMashScoreScreen.m; sourceTree = "<group>"; };
+		6098F76A16217F35001D8136 /* FoodMashScoreScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodMashScoreScreen.xib; sourceTree = "<group>"; };
 		6D1DA20516210F3F0052E5E4 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		6D1DA2081621103A0052E5E4 /* label-profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "label-profile@2x.png"; sourceTree = "<group>"; };
 		6D1DA20A162110440052E5E4 /* boy-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "boy-1@2x.png"; sourceTree = "<group>"; };
@@ -219,6 +225,8 @@
 		6D1DA24D16215FB80052E5E4 /* label-foodmash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "label-foodmash@2x.png"; sourceTree = "<group>"; };
 		6D1DA24E16215FB80052E5E4 /* label-foodrate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "label-foodrate@2x.png"; sourceTree = "<group>"; };
 		6D1DA251162164820052E5E4 /* button-submit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-submit@2x.png"; sourceTree = "<group>"; };
+		6D1DA2571621880F0052E5E4 /* Mash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mash.h; sourceTree = "<group>"; };
+		6D1DA2581621880F0052E5E4 /* Mash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mash.m; sourceTree = "<group>"; };
 		6DD8EED31620B93E006A1F13 /* HealthPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD8EED71620B93E006A1F13 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6DD8EED91620B93E006A1F13 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -467,6 +475,9 @@
 				608F09D116210BAC00FE1CB3 /* FoodPair.m */,
 				608F09DA1621141200FE1CB3 /* FoodProduct.h */,
 				608F09DB1621141200FE1CB3 /* FoodProduct.m */,
+				6098F76816217F34001D8136 /* FoodMashScoreScreen.h */,
+				6098F76916217F34001D8136 /* FoodMashScoreScreen.m */,
+				6098F76A16217F35001D8136 /* FoodMashScoreScreen.xib */,
 			);
 			name = FoodMash;
 			sourceTree = "<group>";
@@ -661,6 +672,8 @@
 				6DD8EF971620E7D9006A1F13 /* CloudyRecResource.m */,
 				6DD8EF981620E7D9006A1F13 /* Exercise.h */,
 				6DD8EF991620E7D9006A1F13 /* Exercise.m */,
+				6D1DA2571621880F0052E5E4 /* Mash.h */,
+				6D1DA2581621880F0052E5E4 /* Mash.m */,
 				6DD8EF9A1620E7D9006A1F13 /* Food.h */,
 				6DD8EF9B1620E7D9006A1F13 /* Food.m */,
 				6DD8EF9C1620E7D9006A1F13 /* Quiz.h */,
@@ -803,6 +816,7 @@
 				6D1DA24F16215FB80052E5E4 /* label-foodmash@2x.png in Resources */,
 				6D1DA25016215FB80052E5E4 /* label-foodrate@2x.png in Resources */,
 				6D1DA252162164820052E5E4 /* button-submit@2x.png in Resources */,
+				6098F76C16217F35001D8136 /* FoodMashScoreScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -822,6 +836,7 @@
 				6DD8EF0A1620BB32006A1F13 /* PreGameViewController.m in Sources */,
 				6DD8EF0F1620BB91006A1F13 /* GameViewController.m in Sources */,
 				6DD8EF191620CA51006A1F13 /* LoginViewController.m in Sources */,
+				6D1DA25A1621885C0052E5E4 /* Mash.m in Sources */,
 				6DD8EF5D1620CE13006A1F13 /* JSONKit.m in Sources */,
 				6DD8EF5F1620CE13006A1F13 /* NSMutableURLRequest+Parameters.m in Sources */,
 				6DD8EF601620CE13006A1F13 /* NSString+URLEncoding.m in Sources */,
@@ -867,6 +882,7 @@
 				608F09D516210BAC00FE1CB3 /* FoodPair.m in Sources */,
 				608F09DC1621141200FE1CB3 /* FoodProduct.m in Sources */,
 				6098F75616213DC8001D8136 /* FoodMashCategoriesController.m in Sources */,
+				6098F76B16217F35001D8136 /* FoodMashScoreScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -944,7 +960,7 @@
 		6DD8EEF21620B93E006A1F13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: GEK HUANG Tay (55MG6DXG86)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HealthPlay/HealthPlay-Prefix.pch";
 				INFOPLIST_FILE = "HealthPlay/HealthPlay-Info.plist";
@@ -953,7 +969,7 @@
 					"\"$(SRCROOT)/HealthPlay/ZBarSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "62FE97AC-DCC5-43EF-A988-F2AEDF1217F4";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
@@ -962,7 +978,7 @@
 		6DD8EEF31620B93E006A1F13 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: GEK HUANG Tay (55MG6DXG86)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HealthPlay/HealthPlay-Prefix.pch";
 				INFOPLIST_FILE = "HealthPlay/HealthPlay-Info.plist";
@@ -971,7 +987,7 @@
 					"\"$(SRCROOT)/HealthPlay/ZBarSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "62FE97AC-DCC5-43EF-A988-F2AEDF1217F4";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};

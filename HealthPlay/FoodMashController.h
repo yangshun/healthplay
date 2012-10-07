@@ -14,13 +14,17 @@
 @property (nonatomic, weak) IBOutlet UILabel *firstLabel;
 @property (nonatomic, weak) IBOutlet UIButton *secondButton;
 @property (nonatomic, weak) IBOutlet UILabel *secondLabel;
+@property (nonatomic, weak) IBOutlet UIView *scoreView;
 
 @property (nonatomic, weak) IBOutlet UILabel *scoreLabel;
-@property (nonatomic, weak) IBOutlet UILabel *pairLabel;
 
 @property (nonatomic, strong) NSString *searchString;
 
+@property (nonatomic) int currentPair;
+@property (nonatomic) int score;
+@property (nonatomic, strong) NSArray *pairs;
 
+- (void) showPair:(int)pairId;
 - (IBAction)firstButtonSelected:(id)sender;
 - (IBAction)secondButtonSelected:(id)sender;
 

@@ -83,7 +83,7 @@
   NSLog(@"url: %@", self.imageURL);
   NSLog(@"userid: %@", userid);
   NSLog(@"bye");
-  [food set_master_id:userid];
+  [food setUser:currUser];
 
   [food saveWithCompletion:^(BOOL respond){} onFailure:^(NSError *respond){
       NSLog(@"Error saving food: %@", respond.description);
@@ -113,7 +113,7 @@
 
 - (IBAction)backButtonPressed:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

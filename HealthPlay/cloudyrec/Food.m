@@ -4,11 +4,13 @@
 //  Copyright (c) 2012 Rival Edge Pte Ltd. All rights reserved.
 //
 
+#import "User.h"
 #import "Food.h"
 @interface Food()
 @end
 @implementation Food 
 @synthesize foodResKey;
+@synthesize _master_id;
 @synthesize name;
 @synthesize grade;
 @synthesize time;
@@ -21,7 +23,7 @@
 	    grade=[grade_ copy];
 	    time=[time_ copy];
 	    imageurl=[imageurl_ copy];
-    foodResKey=@"YBJNWrtQLC";
+    foodResKey=@"5BuNPrqQFT";
   }
   return self;
 }
@@ -37,7 +39,7 @@
 
 -(id)init {
   if(self=[super init]) {
-	self.foodResKey=@"YBJNWrtQLC";
+	self.foodResKey=@"5BuNPrqQFT";
   }
   return self;
 }
@@ -51,6 +53,9 @@
 return foodResKey;
 }
 
+-(NSString*)getUserId{
+  return _master_id;
+}
 -(void)load:(NSString*)id_ onComplete:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail{
    [self loadFromCloud:id_ onComplete:^(NSDictionary* data){
     NSDictionary* dict=[NSDictionary dictionaryWithDictionary:data];
@@ -64,6 +69,14 @@ return foodResKey;
   }onFailure:^(NSError* error){
     fail(error);
   }];
+}
+-(void)setUser:(User*)obj {
+  if([obj getId]==nil) {
+    @throw ([NSException exceptionWithName:@"Error" reason:@"unsaved master object exception" userInfo:nil]);
+  }
+  else {
+    self._master_id = [obj getId];
+  }
 }
 
 -(void) list:(NSString*)query onComplete:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
@@ -94,6 +107,7 @@ return foodResKey;
 
 -(void)saveWithCompletion:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
   NSMutableDictionary* data = [[NSMutableDictionary alloc] init];
+  [data setValue:self._master_id forKey:@"_master_id"];
 	//date format
 	NSDateFormatter *df = [[NSDateFormatter alloc] init];
 	[df setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease]];
@@ -163,6 +177,7 @@ return foodResKey;
 
 -(void)setData:(NSDictionary*)data {
   self._id=[data objectForKey:@"id"];
+  self._master_id =[data objectForKey:@"_master_id"]; 
 
 	//date format
 	NSDateFormatter *df = [[NSDateFormatter alloc] init];

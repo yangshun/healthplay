@@ -13,6 +13,10 @@
   NSString* username;
   NSString* password;
   int points;
+  NSMutableArray* quizList;
+  NSMutableArray* badgeList;
+  NSMutableArray* mashList;
+  NSMutableArray* foodList;
 
 }
 
@@ -20,6 +24,10 @@
 @property(nonatomic,retain) NSString *username;
 @property(nonatomic,retain) NSString *password;
 @property(nonatomic,assign) int points;
+@property(nonatomic,retain) NSMutableArray* quizList;
+@property(nonatomic,retain) NSMutableArray* badgeList;
+@property(nonatomic,retain) NSMutableArray* mashList;
+@property(nonatomic,retain) NSMutableArray* foodList;
 
 
 -(id)initWithUserUsername:(NSString*)username_ Password:(NSString*)password_ Points:(int)points_;
@@ -32,6 +40,22 @@
 -(void)load:(NSString*)id_ onComplete:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
 -(void) list:(NSString*)query onComplete:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
 -(void) list:(NSString*)query Limit:(int)limit Page:(int)page onComplete:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
+-(void) getQuizListWithCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
+-(void) getQuizListWithReload:(BOOL)reload Filter:(NSString *)query Limit:(int)limit Page:(int)page onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
+-(void) getQuizListWithReload:(BOOL)reload Limit:(int)limit Page:(int)page onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
+-(void) getQuizListWithReload:(BOOL)reload onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
+-(void) getBadgeListWithCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
+-(void) getBadgeListWithReload:(BOOL)reload Filter:(NSString *)query Limit:(int)limit Page:(int)page onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
+-(void) getBadgeListWithReload:(BOOL)reload Limit:(int)limit Page:(int)page onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
+-(void) getBadgeListWithReload:(BOOL)reload onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
+-(void) getMashListWithCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
+-(void) getMashListWithReload:(BOOL)reload Filter:(NSString *)query Limit:(int)limit Page:(int)page onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
+-(void) getMashListWithReload:(BOOL)reload Limit:(int)limit Page:(int)page onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
+-(void) getMashListWithReload:(BOOL)reload onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
+-(void) getFoodListWithCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
+-(void) getFoodListWithReload:(BOOL)reload Filter:(NSString *)query Limit:(int)limit Page:(int)page onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
+-(void) getFoodListWithReload:(BOOL)reload Limit:(int)limit Page:(int)page onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
+-(void) getFoodListWithReload:(BOOL)reload onCompletion:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
 
 -(void)saveWithCompletion:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;
 -(void)deleteWithCompletion:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail;

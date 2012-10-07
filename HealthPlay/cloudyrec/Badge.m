@@ -4,21 +4,25 @@
 //  Copyright (c) 2012 Rival Edge Pte Ltd. All rights reserved.
 //
 
+#import "User.h"
 #import "Badge.h"
 @interface Badge()
 @end
 @implementation Badge 
 @synthesize badgeResKey;
+@synthesize _master_id;
 @synthesize name;
 @synthesize badgeid;
 @synthesize type;
+@synthesize time;
 
--(id)initWithBadgeName:(NSString*)name_ Badgeid:(int)badgeid_ Type:(int)type_{
+-(id)initWithBadgeName:(NSString*)name_ Badgeid:(int)badgeid_ Type:(int)type_ Time:(NSDate*)time_{
 
   if(self=[super init]) {
 	    name=[name_ copy];
 	    badgeid=badgeid_;
 	    type=type_;
+	    time=[time_ copy];
     badgeResKey=@"fBwNNr2QrZ";
   }
   return self;
@@ -27,6 +31,7 @@
 -(void)dealloc {
   [badgeResKey release];
   [name release];
+  [time release];
   [super dealloc];
 }
 
@@ -46,6 +51,9 @@
 return badgeResKey;
 }
 
+-(NSString*)getUserId{
+  return _master_id;
+}
 -(void)load:(NSString*)id_ onComplete:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail{
    [self loadFromCloud:id_ onComplete:^(NSDictionary* data){
     NSDictionary* dict=[NSDictionary dictionaryWithDictionary:data];
@@ -59,6 +67,14 @@ return badgeResKey;
   }onFailure:^(NSError* error){
     fail(error);
   }];
+}
+-(void)setUser:(User*)obj {
+  if([obj getId]==nil) {
+    @throw ([NSException exceptionWithName:@"Error" reason:@"unsaved master object exception" userInfo:nil]);
+  }
+  else {
+    self._master_id = [obj getId];
+  }
 }
 
 -(void) list:(NSString*)query onComplete:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
@@ -89,6 +105,7 @@ return badgeResKey;
 
 -(void)saveWithCompletion:(cloudyRecRespondBoolBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
   NSMutableDictionary* data = [[NSMutableDictionary alloc] init];
+  [data setValue:self._master_id forKey:@"_master_id"];
 	//date format
 	NSDateFormatter *df = [[NSDateFormatter alloc] init];
 	[df setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease]];
@@ -98,6 +115,8 @@ return badgeResKey;
   [data setValue:self.name forKey:@"name"];
 	  [data setValue:[NSNumber numberWithInteger:self.badgeid] forKey:@"badgeid"];
 	  [data setValue:[NSNumber numberWithInteger:self.type] forKey:@"type"];
+	  NSString* tmp_date_time=[df stringFromDate:self.time];
+	  [data setValue:tmp_date_time forKey:@"time"];
 
   [df release];
   if(self._id==nil)
@@ -156,6 +175,7 @@ return badgeResKey;
 
 -(void)setData:(NSDictionary*)data {
   self._id=[data objectForKey:@"id"];
+  self._master_id =[data objectForKey:@"_master_id"]; 
 
 	//date format
 	NSDateFormatter *df = [[NSDateFormatter alloc] init];
@@ -166,6 +186,9 @@ return badgeResKey;
 	  self.name=[data objectForKey:@"name"];
 	  self.badgeid=[[data objectForKey:@"badgeid"] intValue];
 	  self.type=[[data objectForKey:@"type"] intValue];
+  NSString* date_str_time=[data objectForKey:@"time"];
+  self.time=[df dateFromString:date_str_time];
+
         [df release];
 }
 @end
