@@ -11,13 +11,15 @@
 #import "ActivityViewController.h"
 #import "PreGameViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
+  CGFloat curYLoc;
+}
 
 - (IBAction)pushProfile:(id)sender;
 - (IBAction)pushActivity:(id)sender;
 - (IBAction)pushPreGame:(id)sender;
 
-@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UIScrollView *feedView;
 @property (strong, nonatomic) NSMutableArray *feedArray;
 
 @end
