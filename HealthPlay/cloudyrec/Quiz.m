@@ -76,7 +76,7 @@ return quizResKey;
 }
 
 -(void) list:(NSString*)query onComplete:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
-  [self list:query Limit:10 Page:1 onComplete:completion onFailure:fail];
+  [self list:query Limit:100 Page:1 onComplete:completion onFailure:fail];
 }
 
 -(void) list:(NSString*)query Limit:(int)limit Page:(int)page onComplete:(cloudyRecRespondBlock)completion onFailure:(cloudyRecRespondErrorBlock)fail {
