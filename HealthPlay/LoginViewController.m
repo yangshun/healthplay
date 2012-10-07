@@ -10,13 +10,14 @@
 #import "LoginViewController.h"
 #import "User.h"
 #import "ViewController.h"
+#import "MBProgressHUD.h"
 
 #define kOFFSET_FOR_KEYBOARD 216.0
 
 @interface LoginViewController () {
-  
-  IBOutlet UITextField *username;
-  IBOutlet UITextField *password;
+    
+    IBOutlet UITextField *username;
+    IBOutlet UITextField *password;
 }
 
 @end
@@ -39,153 +40,168 @@
 }
 
 - (IBAction)registerNewUser:(id)sender {
-  
-  [username resignFirstResponder];
-  [password resignFirstResponder];
-  
-  NSString *userString = username.text;
-  NSString *passwordString = password.text;
-  
-  User *newUser = [[User alloc] initWithUserUsername:userString Password:passwordString Points:0];
-  [newUser saveWithCompletion:^(BOOL respond) {
-    User *alluser = [[User alloc] init];
-    [alluser list:nil onComplete:^(NSArray *respond) {
-      ((NavigationViewController*)(self.navigationController)).allUsersArray = respond;
-    } onFailure:^(NSError *respond) {}];
+    [self showLoadingHUD];
+    [username resignFirstResponder];
+    [password resignFirstResponder];
     
-    NSLog(@"Signup successful.");
-    ((NavigationViewController*)(self.navigationController)).currUser = newUser;
+    NSString *userString = username.text;
+    NSString *passwordString = password.text;
     
-    ViewController *vc = [[ViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
-    NSLog(@"new user id:%@", [newUser getId]);
-  } onFailure:^(NSError *respond) {
-    NSLog(@"Error sign up %@", respond.description);
-  }];
-
-}
-
-- (IBAction)login:(id)sender {
-  
-  [username resignFirstResponder];
-  [password resignFirstResponder];
-  
-  NSString *userString = username.text;
-  NSString *passwordString = password.text;
-  
-  User *user = [[User alloc] init];
-  [user list:nil onComplete:^(NSArray *respond) {
-    ((NavigationViewController*)(self.navigationController)).allUsersArray = respond;
-    BOOL userMatched = NO;
-    for (int i = 0; i < [respond count]; i++) {
-      User *currentUser = (User *)[respond objectAtIndex:i];
-      
-      if ([currentUser.username isEqualToString:userString] &&
-          [currentUser.password isEqualToString:passwordString]) {
-        ((NavigationViewController*)(self.navigationController)).currUser = currentUser;
+    User *newUser = [[User alloc] initWithUserUsername:userString Password:passwordString Points:0];
+    [newUser saveWithCompletion:^(BOOL respond) {
+        [self hideLoadingHUD];
+        User *alluser = [[User alloc] init];
+        [alluser list:nil onComplete:^(NSArray *respond) {
+            ((NavigationViewController*)(self.navigationController)).allUsersArray = respond;
+        } onFailure:^(NSError *respond) {}];
+        
+        NSLog(@"Signup successful.");
+        ((NavigationViewController*)(self.navigationController)).currUser = newUser;
         
         ViewController *vc = [[ViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
-        userMatched = YES;
-        break;
-      }
-    }
-    if (!userMatched) {
-      UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Login error"
-                                                      message:@"Your password is incorrect" delegate:nil cancelButtonTitle:@"Try again" otherButtonTitles: nil];
-      [error show];
-    }
-  } onFailure:^(NSError *respond) {
-    NSLog(@"List error: %@", respond.description);
-  }];
-
+        NSLog(@"new user id:%@", [newUser getId]);
+    } onFailure:^(NSError *respond) {
+        [self hideLoadingHUD];
+        NSLog(@"Error sign up %@", respond.description);
+    }];
+    
 }
 
+- (IBAction)login:(id)sender {
+    [self showLoadingHUD];
+    [username resignFirstResponder];
+    [password resignFirstResponder];
+    
+    NSString *userString = username.text;
+    NSString *passwordString = password.text;
+    
+    User *user = [[User alloc] init];
+    [user list:nil onComplete:^(NSArray *respond) {
+        [self hideLoadingHUD];
+        ((NavigationViewController*)(self.navigationController)).allUsersArray = respond;
+        BOOL userMatched = NO;
+        for (int i = 0; i < [respond count]; i++) {
+            User *currentUser = (User *)[respond objectAtIndex:i];
+            
+            if ([currentUser.username isEqualToString:userString] &&
+                [currentUser.password isEqualToString:passwordString]) {
+                ((NavigationViewController*)(self.navigationController)).currUser = currentUser;
+                
+                ViewController *vc = [[ViewController alloc] init];
+                [self.navigationController pushViewController:vc animated:YES];
+                userMatched = YES;
+                break;
+            }
+        }
+        if (!userMatched) {
+            UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Login error"
+                                                            message:@"Your password is incorrect" delegate:nil cancelButtonTitle:@"Try again" otherButtonTitles: nil];
+            [error show];
+        }
+    } onFailure:^(NSError *respond) {
+        [self hideLoadingHUD];
+        NSLog(@"List error: %@", respond.description);
+    }];
+    
+}
+
+- (void) showLoadingHUD
+{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+}
+
+- (void) hideLoadingHUD
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    });
+}
 
 -(void)keyboardWillShow {
-  // Animate the current view out of the way
-  if (self.view.frame.origin.y >= 0)
-  {
-    [self setViewMovedUp:YES];
-  }
-  else if (self.view.frame.origin.y < 0)
-  {
-    [self setViewMovedUp:NO];
-  }
+    // Animate the current view out of the way
+    if (self.view.frame.origin.y >= 0)
+    {
+        [self setViewMovedUp:YES];
+    }
+    else if (self.view.frame.origin.y < 0)
+    {
+        [self setViewMovedUp:NO];
+    }
 }
 
 -(void)keyboardWillHide {
-  if (self.view.frame.origin.y >= 0)
-  {
-    [self setViewMovedUp:YES];
-  }
-  else if (self.view.frame.origin.y < 0)
-  {
-    [self setViewMovedUp:NO];
-  }
+    if (self.view.frame.origin.y >= 0)
+    {
+        [self setViewMovedUp:YES];
+    }
+    else if (self.view.frame.origin.y < 0)
+    {
+        [self setViewMovedUp:NO];
+    }
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)sender
 {
-  if ([sender isEqual:username] || [sender isEqual:password])
-  {
-    //move the main view, so that the keyboard does not hide it.
-    if  (self.view.frame.origin.y >= 0)
+    if ([sender isEqual:username] || [sender isEqual:password])
     {
-      [self setViewMovedUp:YES];
+        //move the main view, so that the keyboard does not hide it.
+        if  (self.view.frame.origin.y >= 0)
+        {
+            [self setViewMovedUp:YES];
+        }
     }
-  }
 }
 
 //method to move the view up/down whenever the keyboard is shown/dismissed
 -(void)setViewMovedUp:(BOOL)movedUp
 {
-  [UIView beginAnimations:nil context:NULL];
-  [UIView setAnimationDuration:0.25]; // if you want to slide up the view
-  
-  CGRect rect = self.view.frame;
-  if (movedUp)
-  {
-    // 1. move the view's origin up so that the text field that will be hidden come above the keyboard
-    // 2. increase the size of the view so that the area behind the keyboard is covered up.
-    rect.origin.y -= kOFFSET_FOR_KEYBOARD;
-  }
-  else
-  {
-    // revert back to the normal state.
-    rect.origin.y += kOFFSET_FOR_KEYBOARD;
-  }
-  self.view.frame = rect;
-  
-  [UIView commitAnimations];
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.25]; // if you want to slide up the view
+    
+    CGRect rect = self.view.frame;
+    if (movedUp)
+    {
+        // 1. move the view's origin up so that the text field that will be hidden come above the keyboard
+        // 2. increase the size of the view so that the area behind the keyboard is covered up.
+        rect.origin.y -= kOFFSET_FOR_KEYBOARD;
+    }
+    else
+    {
+        // revert back to the normal state.
+        rect.origin.y += kOFFSET_FOR_KEYBOARD;
+    }
+    self.view.frame = rect;
+    
+    [UIView commitAnimations];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-  // register for keyboard notifications
-  [[NSNotificationCenter defaultCenter] addObserver:self
-                                           selector:@selector(keyboardWillShow)
-                                               name:UIKeyboardWillShowNotification
-                                             object:nil];
-  
-  [[NSNotificationCenter defaultCenter] addObserver:self
-                                           selector:@selector(keyboardWillHide)
-                                               name:UIKeyboardWillHideNotification
-                                             object:nil];
-  username.text = @"";
-  password.text = @"";
+    // register for keyboard notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+    username.text = @"";
+    password.text = @"";
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-  // unregister for keyboard notifications while not visible.
-  [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                  name:UIKeyboardWillShowNotification
-                                                object:nil];
-  
-  [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                  name:UIKeyboardWillHideNotification
-                                                object:nil];
+    // unregister for keyboard notifications while not visible.
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillShowNotification
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillHideNotification
+                                                  object:nil];
 }
 
 - (void)viewDidUnload
