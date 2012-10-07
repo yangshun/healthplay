@@ -91,6 +91,7 @@
       
   }
   self.feedView.contentSize = CGSizeMake(280, curYLoc);
+  self.feedView.contentOffset = CGPointMake(0, 0);
 }
 
 - (UIView*)createViewFromString:(NSString*)string andIndex:(int)index {
