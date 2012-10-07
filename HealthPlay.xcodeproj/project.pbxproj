@@ -84,6 +84,7 @@
 		6DD8EFA81620E7D9006A1F13 /* Quiz.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD8EF9D1620E7D9006A1F13 /* Quiz.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6DD8EFA91620E7D9006A1F13 /* SimpleHttpResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD8EF9F1620E7D9006A1F13 /* SimpleHttpResponse.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6DD8EFAA1620E7D9006A1F13 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD8EFA11620E7D9006A1F13 /* User.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6DD8EFB0162104AB006A1F13 /* loginscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD8EFAF162104AB006A1F13 /* loginscreen@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -240,6 +241,7 @@
 		6DD8EF9F1620E7D9006A1F13 /* SimpleHttpResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleHttpResponse.m; sourceTree = "<group>"; };
 		6DD8EFA01620E7D9006A1F13 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		6DD8EFA11620E7D9006A1F13 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		6DD8EFAF162104AB006A1F13 /* loginscreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginscreen@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -440,6 +442,7 @@
 				6DD8EF0C1620BB91006A1F13 /* GameViewController.h */,
 				6DD8EF0D1620BB91006A1F13 /* GameViewController.m */,
 				6DD8EF0E1620BB91006A1F13 /* GameViewController.xib */,
+				6DD8EFB2162104B7006A1F13 /* images */,
 				603DAE2D1620EF4F004B1D81 /* Activites */,
 				6DD8EF8F1620E7D8006A1F13 /* cloudyrec */,
 				6DD8EF261620CE13006A1F13 /* lib */,
@@ -570,6 +573,14 @@
 			path = cloudyrec;
 			sourceTree = "<group>";
 		};
+		6DD8EFB2162104B7006A1F13 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				6DD8EFAF162104AB006A1F13 /* loginscreen@2x.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -638,6 +649,7 @@
 				603DAE131620EDDD004B1D81 /* zbar-helpicons.png in Resources */,
 				603DAE141620EDDD004B1D81 /* zbar-samples.png in Resources */,
 				603DAE281620EED5004B1D81 /* ProductDescriptionController.xib in Resources */,
+				6DD8EFB0162104AB006A1F13 /* loginscreen@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -774,7 +786,7 @@
 		6DD8EEF21620B93E006A1F13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Soedarsono - (PC89633G85)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: GEK HUANG Tay (55MG6DXG86)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HealthPlay/HealthPlay-Prefix.pch";
 				INFOPLIST_FILE = "HealthPlay/HealthPlay-Info.plist";
@@ -783,7 +795,7 @@
 					"\"$(SRCROOT)/HealthPlay/ZBarSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E20AB67E-98FE-4B3C-AD96-7E81F335E33B";
+				PROVISIONING_PROFILE = "62FE97AC-DCC5-43EF-A988-F2AEDF1217F4";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
