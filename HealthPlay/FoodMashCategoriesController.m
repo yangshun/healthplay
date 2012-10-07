@@ -67,7 +67,7 @@
     NSString *searchTerm = [buttonInfo objectForKey:@"searchTerm"];
     
     FoodMashController *controller = [[FoodMashController alloc] init];
-    
+    controller.searchTerm = searchTerm;
     [self showLoadingHUD];
     [FoodMash loadDataWithSearchTerm:searchTerm completion:^(NSArray *pairs) {
         [self hideLoadingHUD];

@@ -12,6 +12,6 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *scoreLabel;
 
-- (id)initWithScore:(int)score;
+- (id)initWithScore:(int)score andCategory:(NSString*)category;
 
 @end

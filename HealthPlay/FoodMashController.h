@@ -18,7 +18,7 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *scoreLabel;
 
-@property (nonatomic, strong) NSString *searchString;
+@property (nonatomic, strong) NSString *searchTerm;
 
 @property (nonatomic) int currentPair;
 @property (nonatomic) int score;
