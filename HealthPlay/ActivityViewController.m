@@ -7,6 +7,7 @@
 //
 
 #import "ActivityViewController.h"
+#import "FoodMashController.h"
 #import "ProductDescriptionController.h"
 
 @interface ActivityViewController ()
@@ -50,7 +51,8 @@
 
 - (IBAction)startFoodMash:(id)sender
 {
-    
+    FoodMashController *controller = [[FoodMashController alloc] init];
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 #pragma mark FoodRate delegate

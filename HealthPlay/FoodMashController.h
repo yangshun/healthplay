@@ -10,4 +10,13 @@
 
 @interface FoodMashController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UIButton *firstButton;
+@property (nonatomic, weak) IBOutlet UIButton *secondButton;
+
+@property (nonatomic, weak) IBOutlet UILabel *scoreLabel;
+@property (nonatomic, weak) IBOutlet UILabel *pairLabel;
+
+- (IBAction)firstButtonSelected:(id)sender;
+- (IBAction)secondButtonSelected:(id)sender;
+
 @end
