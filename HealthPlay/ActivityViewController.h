@@ -13,4 +13,5 @@
 
 - (IBAction)startFoodRate:(id)sender;
 - (IBAction)startFoodMash:(id)sender;
+- (IBAction)startQuiz:(id)sender;
 @end
